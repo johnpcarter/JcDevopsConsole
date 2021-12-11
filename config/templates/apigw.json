@@ -1,0 +1,214 @@
+{
+  "build": {
+    "name": "API Gateway",
+    "productType": "apigw",
+    "isSAGProduct": "true",
+    "hostName": "apigw-host",
+    "primaryPort": "5555",
+    "entryPoint": "is-docker-init.sh",
+    "exitPoint": "msr-docker-stop.sh",
+    "healthCheck": "msr-docker-health-check.sh",
+    "buildCommands": [
+      {
+        "commandType": "run",
+        "buildTarget": "build",
+        "fileType": "eventstore",
+        "description": "Ensure directory exists, prior to volume mounting",
+        "target": "mkdir -p /opt/softwareag/EventDataStore/data",
+        "conditions": ["useExternalELK==false"],
+        "display": "hidden"
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "build",
+        "fileType": "internal",
+        "description": "Ensure directory exists, prior to volume mounting",
+        "target": "mkdir -p /opt/softwareag/InternalDataStore/data",
+        "conditions": ["useExternalELK==false"],
+        "display": "hidden"
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "build",
+        "fileType": "isdb",
+        "description": "Ensure directory exists, prior to volume mounting",
+        "target": "mkdir /opt/softwareag/IntegrationServer/instances/default/db",
+        "display": "hidden"
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "build",
+        "fileType": "cache",
+        "description": "Ensure directory exists, prior to volume mounting",
+        "target": "mkdir /opt/softwareag/IntegrationServer/instances/default/cache",
+        "display": "hidden"
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Gateway Configuration",
+        "fileType": "product",
+        "source": "config-sources.yml",
+        "target": "/opt/softwareag/IntegrationServer/instances/default/packages/WmAPIGateway/resources/configuration",
+        "display": "hidden",
+        "conditions": ["useExternalELK","useExternalKibana"]
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "ELK Configuration",
+        "fileType": "product",
+        "source": "elk-settings.properties",
+        "target": "/opt/softwareag/IntegrationServer/instances/default/packages/WmAPIGateway/resources/configuration",
+        "display": "hidden",
+        "conditions": ["useExternalELK"]
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Kibana Configuration",
+        "fileType": "product",
+        "source": "kibana-settings.properties",
+        "target": "/opt/softwareag/IntegrationServer/instances/default/packages/WmAPIGateway/resources/configuration",
+        "display": "hidden",
+        "conditions": ["useExternalKibana"]
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Kibana Client Certificate",
+        "fileType": "properties",
+        "target": "/opt/softwareag/IntegrationServer/instances/default/packages/WmAPIGateway/resources/configuration/kibana-client-certs",
+        "display": "editable",
+        "required": false,
+        "conditions": ["useExternalKibana"]
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "post-install",
+        "description": "Delete embedded ELK, not needed",
+        "target": "rm -r /opt/softwareag/InternalDataStore",
+        "display": "hidden",
+        "conditions": ["useExternalELK"]
+      }
+    ],
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "uIPort",
+          "9072"
+        ],
+        [
+          "uIPortSecure",
+          "9073"
+        ],
+        [
+          "useExternalELK",
+          "false"
+        ],
+        [
+          "ElkPortHttp",
+          "2405"
+        ],
+        [
+          "ElkPortTCP",
+          "9340"
+        ],
+        [ "elkExternalHost",
+          "elk-server"
+        ],
+        [ "elkExternalPort",
+          "9200"
+        ],
+        [ "elkUser",
+          ""
+        ],
+        [ "elkPassword",
+          ""
+        ],
+        [
+          "useExternalKibana",
+          "false"
+        ],
+        [
+          "kibanaUrl",
+          ""
+        ]
+      ]
+    }
+  },
+  "container": {
+    "type": "API Gateway",
+    "description": "API Gateway",
+    "name": "wm-api-gateway",
+    "ports": [
+      {
+        "internal": "5555",
+        "external": "5555",
+        "description": "API Access",
+        "type": "http"
+      },
+      {
+        "internal": "9072",
+        "external": "9072",
+        "description": "Admin UI",
+        "type": "http"
+      },
+      {
+        "internal": "9240",
+        "external": "9240",
+        "description": "Elastic Search",
+        "type": ""
+      }
+    ],
+    "env": [
+      {
+        "source": "apigw_elasticsearch_hosts",
+        "target": "host.docker.internal:9200",
+        "description": "provide end point and port for external ELK v7.2+"
+      }
+    ],
+    "volumes": [
+      {
+        "source": "apidb",
+        "target": "/opt/softwareag/IntegrationServer/instances/default/db",
+        "description": "Internal DB"
+      },
+      {
+        "source": "apiconfig",
+        "target": "/opt/softwareag/IntegrationServer/instances/default/config",
+        "description": "Internal DB"
+      },
+      {
+        "source": "apicache",
+        "target": "/opt/softwareag/IntegrationServer/instances/default/cache",
+        "description": "local Caches"
+      },
+      {
+        "source": "apistore",
+        "target": "/opt/softwareag/InternalDataStore/data",
+        "description": "API Configuration & Policies"
+      },
+      {
+        "source": "apievents",
+        "target": "/opt/softwareag/EventDataStore/data",
+        "description": "Logging"
+      }
+    ],
+    "readinessProbe": {
+      "path": "/invoke/wm.server/ping",
+      "port": "5555",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/invoke/wm.server/ping",
+      "port": "5555",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

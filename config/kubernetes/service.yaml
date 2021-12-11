@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: %value appPrefix%%value appName%%nl%
+    deploymentId: %value deploymentId%%nl%
+  name: %value appPrefix%%value serviceTypeLowercase%-%value name%%nl%
+  namespace: %value namespace%%nl%
+spec:
+  selector:
+    app: %value appPrefix%%value appName%%nl%
+  type: %value serviceType%%nl%%ifvar ipaddress -notnull%
+  clusterIP: %value ipaddress%%endif%
+  ports: %loop ports%
+  - name: %value description%%nl%
+    port: %value internal%%nl%
+    protocol: TCP
+    targetPort: %value internal%%ifvar serviceType equals('NodePort')%
+    nodePort: %value publicPort%%endif%%endloop%

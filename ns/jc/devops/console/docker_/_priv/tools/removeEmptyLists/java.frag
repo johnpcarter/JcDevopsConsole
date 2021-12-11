@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeEmptyLists</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ly8gcGlwZWxpbmUgaW4KCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yID0gcGlwZWxpbmUuZ2V0
+Q3Vyc29yKCk7CklEYXRhIGRvYyA9IElEYXRhVXRpbC5nZXRJRGF0YShwaXBlbGluZUN1cnNvciwg
+ImRvYyIpOwoKaWYgKCBkb2MgIT0gbnVsbCkKewoJSURhdGFDdXJzb3IgYyA9IGRvYy5nZXRDdXJz
+b3IoKTsKCWMuZmlyc3QoKTsKCQoJZG8gewoJCVN0cmluZyBrZXkgPSBjLmdldEtleSgpOwoJCU9i
+amVjdCB2YWx1ZSA9IGMuZ2V0VmFsdWUoKTsKCQkKCQlpZiAodmFsdWUgaW5zdGFuY2VvZiBPYmpl
+Y3RbXSAmJiAoKE9iamVjdFtdKSB2YWx1ZSkubGVuZ3RoID09IDApIHsKCQkJYy5kZWxldGUoKTsK
+CQl9CgkJCgkJYy5uZXh0KCk7Cgl9IHdoaWxlIChjLmhhc01vcmVEYXRhKCkpOwoJCgljLmRlc3Ry
+b3koKTsKfQoKcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOwoKLy8gcGlwZWxpbmUKCgk=</value>
+</Values>

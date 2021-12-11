@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="helloworld" name="com.wm.ps.test.WmTestSuite" skipped="0" tests="2" time="0.248" timestamp="2020-11-14T14:27:22">
+  <properties>
+    <property name="java.vendor" value="Azul Systems, Inc." />
+    <property name="ant.file.type.BuildTest" value="file" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="webMethods.home" value="/opt/softwareag" />
+    <property name="java.source.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/source" />
+    <property name="setup.files.exists" value="false" />
+    <property name="os.name" value="Linux" />
+    <property name="sun.boot.class.path" value="/opt/softwareag/jvm/jvm/jre/lib/resources.jar:/opt/softwareag/jvm/jvm/jre/lib/rt.jar:/opt/softwareag/jvm/jvm/jre/lib/sunrsasign.jar:/opt/softwareag/jvm/jvm/jre/lib/jsse.jar:/opt/softwareag/jvm/jvm/jre/lib/jce.jar:/opt/softwareag/jvm/jvm/jre/lib/charsets.jar:/opt/softwareag/jvm/jvm/jre/lib/jfr.jar:/opt/softwareag/jvm/jvm/jre/classes" />
+    <property name="test.reports.dir" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="./ant" />
+    <property name="resource.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources" />
+    <property name="java.runtime.version" value="1.8.0_222-b10" />
+    <property name="test.jars.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/jars" />
+    <property name="test.build.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/classes" />
+    <property name="user.name" value="sagadmin" />
+    <property name="java.jars.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/jars" />
+    <property name="webMethods.package.dir.exists" value="true" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/opt/softwareag/jvm/jvm/jre/lib/amd64" />
+    <property name="webMethods.package.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld" />
+    <property name="ant.project.default-target" value="runall-test" />
+    <property name="ant.project.name" value="BuildTest" />
+    <property name="java.version" value="1.8.0_222" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="/opt/softwareag/jvm/jvm/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="webMethods.test.setup.filename" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/setup/helloWorldTestSuite.xml" />
+    <property name="java.class.version" value="52.0" />
+    <property name="webMethods.package.name" value="JcHelloWorld" />
+    <property name="user.country" value="US" />
+    <property name="webMethods.integrationServer.userid" value="Administrator" />
+    <property name="java.home" value="/opt/softwareag/jvm/jvm/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/run-test-suites.xml" />
+    <property name="os.version" value="5.4.39-linuxkit" />
+    <property name="library.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/jars" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="25.222-b10" />
+    <property name="java.build.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/classes" />
+    <property name="ant.library.dir" value="./ant/lib" />
+    <property name="webMethods.integrationServer.port" value="5555" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
+    <property name="user.home" value="/home/sag" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="/opt/softwareag/IntegrationServer/bin/../../common/lib:/opt/softwareag/IntegrationServer/bin/../../common/bin:/opt/softwareag/IntegrationServer/bin/../lib:/opt/softwareag/IntegrationServer/bin/../lib::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib" />
+    <property name="java.vendor.url" value="http://www.azulsystems.com/" />
+    <property name="webMethods.test.setup.profile.mode" value="COVERAGE" />
+    <property name="webMethods.test.profile.result.location" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results" />
+    <property name="java.vm.vendor" value="Azul Systems, Inc." />
+    <property name="webMethods.projects.filter" value="Default;JcAPITools;JcHelloWorld;JcPublicTools;JcTestRunner;WmART;WmARTExtDC;WmAS400;WmAdmin;WmCloud;WmConsul;WmFlatFile;WmISExtDC;WmJDBCAdapter;WmJSONAPI;WmPublic;WmRoot;WmXSLT" />
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.wm.ps.test.WmTestSuite skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results/TEST-JcHelloWorld_helloWorldTestSuite.xml crashfile=/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/junitvmwatcher7642923803127412513.properties propsfile=/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/junit4185039303764538753.properties" />
+    <property name="java.class.path" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/commons-jxpath-1.2.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/hamcrest-core.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/httpunit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/junit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/serviceInterceptor.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/serviceMockClient.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/xmlunit1.0.jar:/opt/softwareag/common/lib/wm-isclient.jar:/opt/softwareag/common/lib/ext/icu4j.jar:/opt/softwareag/common/lib/ext/enttoolkit.jar:/opt/softwareag/IntegrationServer/lib/wm-isserver.jar:/opt/softwareag/common/lib/wm-g11nutils.jar:/opt/softwareag/common/lib/ant/ant-contrib-1.0b3.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/jars/org.glassfish.jakarta.mail_1.6.3.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/jars/org.glassfish.metro.webservices-api-osgi_2.4.3.jar:/opt/softwareag/IntegrationServer/lib/wm-isproxy.jar:/opt/softwareag/IntegrationServer/config/Caching:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-launcher.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-junit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.8 compiled on May 10 2020" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="webMethods.integrationServer.ssl" value="false" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="java.vendor.url.bug" value="http://www.azulsystems.com/support/" />
+    <property name="webMethods.integrationServer.name" value="localhost" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.ext.dirs" value="/opt/softwareag/jvm/jvm/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="ant.file.BuildTest" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/run-test-suites.xml" />
+    <property name="user.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld" />
+    <property name="test.source.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/source" />
+    <property name="file.basename" value="helloWorldTestSuite" />
+    <property name="build.javac.target" value="1.8" />
+    <property name="valid.webMethodsTestSuite" value="true" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+    <property name="basedir" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="webMethods.test.setup.external.classpath.layout" value="resources/test/classes,resources/java/classes,resources/test/jars,resources/java/jars,resources/jars," />
+    <property name="ant.core.lib" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/./ant/lib/ant.jar" />
+    <property name="current.project" value="resources" />
+    <property name="file.encoding" value="ANSI_X3.4-1968" />
+    <property name="webMethods.integrationServer.password" value="manage" />
+    <property name="test.xml.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/setup" />
+    <property name="webMethods.projects.location" value="/opt/softwareag/IntegrationServer/packages" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="run-test-suite" />
+  </properties>
+  <testcase classname="com.wm.ps.test.WmTestCase" name="HelloWorld V2 Tester" time="0.207" />
+  <testcase classname="com.wm.ps.test.WmTestCase" name="HelloWorld V1 Tester" time="0.026" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

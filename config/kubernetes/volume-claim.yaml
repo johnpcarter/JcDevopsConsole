@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: %value volumeName%%nl%
+  namespace: %value namespace%%nl%
+spec:
+  accessModes:
+    - %value accessMode%%nl%
+  resources:
+    requests:
+      storage: %value capacity%%nl%
+  storageClassName: %value storageType%%nl%

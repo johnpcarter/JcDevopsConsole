@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getFileFromContainer</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ly8gcGlwZWxpbmUKSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJz
+b3IoKTsKU3RyaW5nIGNvbnRhaW5lcklkID0gSURhdGFVdGlsLmdldFN0cmluZyhwaXBlbGluZUN1
+cnNvciwgImNvbnRhaW5lcklkIik7ClN0cmluZyByZW1vdGVEaXIgPSBJRGF0YVV0aWwuZ2V0U3Ry
+aW5nKHBpcGVsaW5lQ3Vyc29yLCAicmVtb3RlRGlyIik7ClN0cmluZyBsb2NhbEFyY2hpdmUgPSBJ
+RGF0YVV0aWwuZ2V0U3RyaW5nKHBpcGVsaW5lQ3Vyc29yLCAibG9jYWxBcmNoaXZlIik7Cgp0cnkg
+ewoJRG9ja2VyQnVpbGRlci5jb3B5Q29udGVudHNGcm9tQ29udGFpbmVyKERvY2tlckNvbm5lY3Rp
+b25VdGlsLmNyZWF0ZURvY2tlckNsaWVudCgpLCBjb250YWluZXJJZCwgcmVtb3RlRGlyLCBuZXcg
+RmlsZShsb2NhbEFyY2hpdmUpKTsKfSBjYXRjaCAoRG9ja2VyRXhjZXB0aW9uIHwgSW50ZXJydXB0
+ZWRFeGNlcHRpb24gfCBJT0V4Y2VwdGlvbiB8IERvY2tlckNlcnRpZmljYXRlRXhjZXB0aW9uIGUp
+IHsKCXRocm93IG5ldyBTZXJ2aWNlRXhjZXB0aW9uKGUpOwp9</value>
+</Values>

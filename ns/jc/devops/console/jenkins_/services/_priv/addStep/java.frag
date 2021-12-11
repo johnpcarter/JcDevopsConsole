@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">addStep</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ly8gcGlwZWxpbmUgaW4KCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yID0gcGlwZWxpbmUuZ2V0
+Q3Vyc29yKCk7CklEYXRhIHN0ZXAgPSBJRGF0YVV0aWwuZ2V0SURhdGEocGlwZWxpbmVDdXJzb3Is
+ICJzdGVwIik7CklEYXRhW10Jc3RlcHMgPSBJRGF0YVV0aWwuZ2V0SURhdGFBcnJheShwaXBlbGlu
+ZUN1cnNvciwgInN0ZXBzIiApOwoKLy8gcHJvY2VzcwoKSURhdGFDdXJzb3Igc3RlcEN1cnNvciA9
+IHN0ZXAuZ2V0Q3Vyc29yKCk7ClN0cmluZyBuYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyhzdGVw
+Q3Vyc29yLCAibmFtZSIpOwpTdHJpbmcgd2hlbiA9IElEYXRhVXRpbC5nZXRTdHJpbmcoc3RlcEN1
+cnNvciwgIndoZW4iKTsKU3RyaW5nIHN0ZXBEZXRhaWwgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKHN0
+ZXBDdXJzb3IsICJzdGVwIik7CnN0ZXBDdXJzb3IuZGVzdHJveSgpOwoKc3RlcHMgPSBhZGRTdGVw
+VG9TdGVwcyhuYW1lLCB3aGVuLCBzdGVwRGV0YWlsLCBzdGVwcyk7CgovLyBwaXBlbGluZSBvdXQK
+CklEYXRhVXRpbC5wdXQocGlwZWxpbmVDdXJzb3IsICJzdGVwcyIsIHN0ZXBzKTsKcGlwZWxpbmVD
+dXJzb3IuZGVzdHJveSgpOw==</value>
+</Values>

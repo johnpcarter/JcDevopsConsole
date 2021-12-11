@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="2" failures="0" hostname="helloworld" name="com.wm.ps.test.WmTestSuite" skipped="0" tests="2" time="0.152" timestamp="2020-11-04T17:16:46">
+  <properties>
+    <property name="java.vendor" value="Azul Systems, Inc." />
+    <property name="ant.file.type.BuildTest" value="file" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="webMethods.home" value="/opt/softwareag" />
+    <property name="java.source.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/source" />
+    <property name="setup.files.exists" value="false" />
+    <property name="os.name" value="Linux" />
+    <property name="sun.boot.class.path" value="/opt/softwareag/jvm/jvm/jre/lib/resources.jar:/opt/softwareag/jvm/jvm/jre/lib/rt.jar:/opt/softwareag/jvm/jvm/jre/lib/sunrsasign.jar:/opt/softwareag/jvm/jvm/jre/lib/jsse.jar:/opt/softwareag/jvm/jvm/jre/lib/jce.jar:/opt/softwareag/jvm/jvm/jre/lib/charsets.jar:/opt/softwareag/jvm/jvm/jre/lib/jfr.jar:/opt/softwareag/jvm/jvm/jre/classes" />
+    <property name="test.reports.dir" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="./ant" />
+    <property name="resource.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources" />
+    <property name="java.runtime.version" value="1.8.0_222-b10" />
+    <property name="test.jars.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/jars" />
+    <property name="test.build.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/classes" />
+    <property name="user.name" value="sagadmin" />
+    <property name="java.jars.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/jars" />
+    <property name="webMethods.package.dir.exists" value="true" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/opt/softwareag/jvm/jvm/jre/lib/amd64" />
+    <property name="webMethods.package.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld" />
+    <property name="ant.project.default-target" value="runall-test" />
+    <property name="ant.project.name" value="BuildTest" />
+    <property name="java.version" value="1.8.0_222" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="/opt/softwareag/jvm/jvm/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="webMethods.test.setup.filename" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/setup/helloWorldTestSuite.xml" />
+    <property name="java.class.version" value="52.0" />
+    <property name="webMethods.package.name" value="JcHelloWorld" />
+    <property name="user.country" value="US" />
+    <property name="webMethods.integrationServer.userid" value="Administrator" />
+    <property name="java.home" value="/opt/softwareag/jvm/jvm/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/run-test-suites.xml" />
+    <property name="os.version" value="4.19.76-linuxkit" />
+    <property name="library.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/jars" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="25.222-b10" />
+    <property name="java.build.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/classes" />
+    <property name="ant.library.dir" value="./ant/lib" />
+    <property name="webMethods.integrationServer.port" value="4444" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
+    <property name="user.home" value="/home/sag" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="/opt/softwareag/IntegrationServer/bin/../../common/lib:/opt/softwareag/IntegrationServer/bin/../../common/bin:/opt/softwareag/IntegrationServer/bin/../lib:/opt/softwareag/IntegrationServer/bin/../lib::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib" />
+    <property name="java.vendor.url" value="http://www.azulsystems.com/" />
+    <property name="webMethods.test.setup.profile.mode" value="COVERAGE" />
+    <property name="webMethods.test.profile.result.location" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results" />
+    <property name="java.vm.vendor" value="Azul Systems, Inc." />
+    <property name="webMethods.projects.filter" value="Default;JcAPITools;JcHelloWorld;JcPublicTools;JcTestRunner;WmART;WmARTExtDC;WmAS400;WmAdmin;WmCloud;WmConsul;WmFlatFile;WmISExtDC;WmJSONAPI;WmPublic;WmRoot;WmXSLT" />
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.wm.ps.test.WmTestSuite skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results/TEST-JcHelloWorld_helloWorldTestSuite.xml crashfile=/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/junitvmwatcher5273606092206215743.properties propsfile=/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/junit2037273807918186583.properties" />
+    <property name="java.class.path" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/commons-jxpath-1.2.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/hamcrest-core.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/httpunit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/junit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/serviceInterceptor.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/serviceMockClient.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/xmlunit1.0.jar:/opt/softwareag/common/lib/wm-isclient.jar:/opt/softwareag/common/lib/ext/icu4j.jar:/opt/softwareag/common/lib/ext/enttoolkit.jar:/opt/softwareag/IntegrationServer/lib/wm-isserver.jar:/opt/softwareag/common/lib/wm-g11nutils.jar:/opt/softwareag/common/lib/ant/ant-contrib-1.0b3.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/jars/org.glassfish.jakarta.mail_1.6.3.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/jars/org.glassfish.metro.webservices-api-osgi_2.4.3.jar:/opt/softwareag/IntegrationServer/lib/wm-isproxy.jar:/opt/softwareag/IntegrationServer/config/Caching:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-launcher.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-junit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.8 compiled on May 10 2020" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="webMethods.integrationServer.ssl" value="false" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="java.vendor.url.bug" value="http://www.azulsystems.com/support/" />
+    <property name="webMethods.integrationServer.name" value="localhost" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.ext.dirs" value="/opt/softwareag/jvm/jvm/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="ant.file.BuildTest" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/run-test-suites.xml" />
+    <property name="user.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld" />
+    <property name="test.source.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/source" />
+    <property name="file.basename" value="helloWorldTestSuite" />
+    <property name="build.javac.target" value="1.8" />
+    <property name="valid.webMethodsTestSuite" value="true" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+    <property name="basedir" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="webMethods.test.setup.external.classpath.layout" value="resources/test/classes,resources/java/classes,resources/test/jars,resources/java/jars,resources/jars," />
+    <property name="ant.core.lib" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/./ant/lib/ant.jar" />
+    <property name="current.project" value="resources" />
+    <property name="file.encoding" value="ANSI_X3.4-1968" />
+    <property name="webMethods.integrationServer.password" value="manage" />
+    <property name="test.xml.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/setup" />
+    <property name="webMethods.projects.location" value="/opt/softwareag/IntegrationServer/packages" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="run-test-suite" />
+  </properties>
+  <testcase classname="com.wm.ps.test.WmTestCase" name="HelloWorld V2 Tester" time="0.112">
+    <error message="[ART.117.4021] Adapter Runtime (Adapter Service): Unable to invoke adapter service jc.api.helloworld_.services.priv.jdbc:insertMessage. Unable to get adapter service template.&#xa;[ART.117.4006] Adapter Runtime (Adapter Service): Invalid adapter type JDBCAdapter." type="com.wm.app.b2b.client.ServiceException">com.wm.pkg.art.error.DetailedServiceException: [ART.117.4021] Adapter Runtime (Adapter Service): Unable to invoke adapter service jc.api.helloworld_.services.priv.jdbc:insertMessage. Unable to get adapter service template.
+[ART.117.4006] Adapter Runtime (Adapter Service): Invalid adapter type JDBCAdapter.
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:134)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:125)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:260)
+	at com.wm.pkg.art.ns.ARTNSService.baseInvoke(ARTNSService.java:62)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:739)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:46)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:61)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:250)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:56)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:178)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:334)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:41)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:401)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:611)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:423)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:381)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:253)
+	at com.wm.app.b2b.server.BaseService.invoke(BaseService.java:236)
+	at com.wm.lang.flow.FlowInvoke.invoke(FlowInvoke.java:267)
+	at com.wm.lang.flow.FlowState.invokeNode(FlowState.java:668)
+	at com.wm.lang.flow.FlowState.step(FlowState.java:534)
+	at com.wm.lang.flow.FlowState.invoke(FlowState.java:501)
+	at com.wm.app.b2b.server.FlowSvcImpl.baseInvoke(FlowSvcImpl.java:1150)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:739)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:46)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:61)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:250)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:56)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:178)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:334)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:41)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:401)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:611)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:423)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:381)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:253)
+	at com.wm.app.b2b.server.comm.DefaultServerRequestHandler.handleMessage(DefaultServerRequestHandler.java:127)
+	at com.wm.app.b2b.server.HTTPMessageHandler.process(HTTPMessageHandler.java:163)
+	at com.wm.app.b2b.server.HTTPDispatch.handleRequest(HTTPDispatch.java:223)
+	at com.wm.app.b2b.server.Dispatch.run(Dispatch.java:430)
+	at com.wm.util.pool.PooledThread.run(PooledThread.java:134)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.wm.pkg.art.error.DetailedException: [ART.117.4006] Adapter Runtime (Adapter Service): Invalid adapter type JDBCAdapter.
+	at com.wm.pkg.art.ns.AdapterServiceNode.getAdapterType(AdapterServiceNode.java:719)
+	at com.wm.pkg.art.ns.AdapterServiceNode.getInteractionSpec(AdapterServiceNode.java:630)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:256)
+</error>
+  </testcase>
+  <testcase classname="com.wm.ps.test.WmTestCase" name="HelloWorld V1 Tester" time="0.03">
+    <error message="greeting :Expected and actual objects don&apos;t match.: expected &lt;Hello Bob from node helloworld-app - The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. &gt; but was &lt;Hello Bob from node helloworld - The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. &gt;" type="java.lang.AssertionError">java.lang.AssertionError: greeting :Expected and actual objects don&apos;t match.: expected &lt;Hello Bob from node helloworld-app - The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. &gt; but was &lt;Hello Bob from node helloworld - The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. &gt;
+	at com.wm.ps.test.WmAssert.assertIDataEquals(WmAssert.java:205)
+	at com.wm.ps.test.WmAssert.assertEquals(WmAssert.java:75)
+	at com.wm.ps.test.DefaultResultsValidator.assertValid(DefaultResultsValidator.java:168)
+	at com.wm.ps.test.WmTestCase.runInvoke(WmTestCase.java:1242)
+	at com.wm.ps.test.WmTestCase.runTest(WmTestCase.java:1152)
+</error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[com.wm.pkg.art.error.DetailedServiceException: [ART.117.4021] Adapter Runtime (Adapter Service): Unable to invoke adapter service jc.api.helloworld_.services.priv.jdbc:insertMessage. Unable to get adapter service template.
+[ART.117.4006] Adapter Runtime (Adapter Service): Invalid adapter type JDBCAdapter.
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:134)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:125)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:260)
+	at com.wm.pkg.art.ns.ARTNSService.baseInvoke(ARTNSService.java:62)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:739)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:46)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:61)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:250)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:56)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:178)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:334)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:41)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:401)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:611)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:423)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:381)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:253)
+	at com.wm.app.b2b.server.BaseService.invoke(BaseService.java:236)
+	at com.wm.lang.flow.FlowInvoke.invoke(FlowInvoke.java:267)
+	at com.wm.lang.flow.FlowState.invokeNode(FlowState.java:668)
+	at com.wm.lang.flow.FlowState.step(FlowState.java:534)
+	at com.wm.lang.flow.FlowState.invoke(FlowState.java:501)
+	at com.wm.app.b2b.server.FlowSvcImpl.baseInvoke(FlowSvcImpl.java:1150)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:739)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:46)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:61)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:250)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:56)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:178)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:334)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:41)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:401)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:611)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:423)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:381)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:253)
+	at com.wm.app.b2b.server.comm.DefaultServerRequestHandler.handleMessage(DefaultServerRequestHandler.java:127)
+	at com.wm.app.b2b.server.HTTPMessageHandler.process(HTTPMessageHandler.java:163)
+	at com.wm.app.b2b.server.HTTPDispatch.handleRequest(HTTPDispatch.java:223)
+	at com.wm.app.b2b.server.Dispatch.run(Dispatch.java:430)
+	at com.wm.util.pool.PooledThread.run(PooledThread.java:134)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.wm.pkg.art.error.DetailedException: [ART.117.4006] Adapter Runtime (Adapter Service): Invalid adapter type JDBCAdapter.
+	at com.wm.pkg.art.ns.AdapterServiceNode.getAdapterType(AdapterServiceNode.java:719)
+	at com.wm.pkg.art.ns.AdapterServiceNode.getInteractionSpec(AdapterServiceNode.java:630)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:256)
+	... 39 more
+]]></system-err>
+</testsuite>

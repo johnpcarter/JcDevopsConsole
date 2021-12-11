@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">jc.devops.console.gateway_._priv</value>
+  <value name="is_public">false</value>
+  <value name="shared">cHJpdmF0ZSBzdGF0aWMgTWFwPFN0cmluZywgWHJlZj4geHJlZiA9IG5ldyBIYXNoTWFwPFN0cmlu
+ZywgWHJlZj4oKTsKCnByaXZhdGUgc3RhdGljIGNsYXNzIFhyZWYgewoJCglwcml2YXRlIE1hcDxT
+dHJpbmcsIFN0cmluZz4gaWRzID0gbmV3IEhhc2hNYXA8U3RyaW5nLCBTdHJpbmc+KCk7CgkKCXB1
+YmxpYyB2b2lkIGFkZChTdHJpbmcgdmVyc2lvbiwgU3RyaW5nIGlkKSB7CgkJCgkJaWRzLnB1dCh2
+ZXJzaW9uLCAgaWQpOwoJfQoJCglwdWJsaWMgU3RyaW5nIGdldElkKFN0cmluZyB2ZXJzaW9uKSB7
+CgkJCgkJcmV0dXJuIHRoaXMuaWRzLmdldCh2ZXJzaW9uKTsKCX0KCQoJcHVibGljIElEYXRhW10g
+dG9JRGF0YSgpIHsKCQkKCQlBcnJheUxpc3Q8SURhdGE+IG91dCA9IG5ldyBBcnJheUxpc3Q8SURh
+dGE+KCk7CgkJCgkJdGhpcy5pZHMua2V5U2V0KCkuZm9yRWFjaCgoaykgLT4gewoJCQlJRGF0YSBy
+ID0gSURhdGFGYWN0b3J5LmNyZWF0ZSgpOwoJCQkKCQkJSURhdGFDdXJzb3IgYyA9IHIuZ2V0Q3Vy
+c29yKCk7CgkJCUlEYXRhVXRpbC5wdXQoYywgInZlcnNpb24iLCBrKTsKCQkJSURhdGFVdGlsLnB1
+dChjLCAiaWQiLCB0aGlzLmlkcy5nZXQoaykpOwoJCQljLmRlc3Ryb3koKTsKCQkJCgkJCW91dC5h
+ZGQocik7CgkJfSk7CgkJCgkJcmV0dXJuIG91dC50b0FycmF5KG5ldyBJRGF0YVtvdXQuc2l6ZSgp
+XSk7Cgl9CgkKCXB1YmxpYyBJRGF0YSB0b0lEYXRhKFN0cmluZyB2ZXJzaW9uKSB7CgkJCgkJU3Ry
+aW5nIGlkID0gdGhpcy5pZHMuZ2V0KHZlcnNpb24pOwoJCUlEYXRhIHIgPSBudWxsOwoJCQoJCWlm
+IChpZCAhPSBudWxsKSB7CgkJCXIgPSBJRGF0YUZhY3RvcnkuY3JlYXRlKCk7CgkJCQoJCQlJRGF0
+YUN1cnNvciBjID0gci5nZXRDdXJzb3IoKTsKCQkJSURhdGFVdGlsLnB1dChjLCAidmVyc2lvbiIs
+IHZlcnNpb24pOwoJCQlJRGF0YVV0aWwucHV0KGMsICJpZCIsIGlkKTsKCQkJYy5kZXN0cm95KCk7
+CgkJfTsKCQkKCQlyZXR1cm4gcjsKCX0KfQ==</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.util.ArrayList</value>
+    <value>java.util.HashMap</value>
+    <value>java.util.Map</value>
+  </array>
+</Values>

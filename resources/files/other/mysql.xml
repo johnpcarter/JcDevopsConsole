@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.app.jdbc.JDBCBasicData">
+    <value name="alias">mysql</value>
+    <number name="minConns" type="java.lang.Integer">3</number>
+    <number name="maxConns" type="java.lang.Integer">10</number>
+    <number name="expireTime" type="java.lang.Integer">60000</number>
+    <value name="dbURL">jdbc:wm:mysql://mysqldb:3306;databaseName=wm</value>
+    <value name="userid">wm</value>
+    <value name="pswdHandle">wm.is.admin.jdbc.mysql</value>
+    <value name="driverAlias">DataDirect Connect JDBC MySQL Driver</value>
+    <value name="description">docker</value>
+    <jboolean name="spyenabled">false</jboolean>
+    <value name="spyparms">SpyAttributes=(log=(file)logs/spy/mysql.log;logTName=yes;timestamp=yes) </value>
+    <jboolean name="snoopenabled">false</jboolean>
+    <value name="snoopparms">ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/mysql.log;ddtdbg.ProtocolTraceShowTime=true</value>
+    <number name="poolThreshold" type="java.lang.Integer">90</number>
+    <number name="waitingThread" type="java.lang.Integer">3000</number>
+  </record>
+</IDataXMLCoder>

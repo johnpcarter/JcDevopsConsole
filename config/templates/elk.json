@@ -1,0 +1,63 @@
+{
+  "container": {
+    "name": "elk-server",
+    "hostName": "elasticsearch",
+    "description": "Elastic Search",
+    "type": "elk",
+    "ports": [
+      {
+        "internal": "9200",
+        "external": "9200",
+        "description": "Http Port",
+        "type": "http",
+        "publicPort": "30920"
+      },
+      {
+        "internal": "9300",
+        "external": "9300",
+        "description": "Secure Port",
+        "type": "http",
+        "publicPort": "30930"
+      }
+    ],
+    "env": [
+      {
+        "source": "discovery.type",
+        "target": "single-node",
+        "description": "Disables cluster (Remove if cluster required!)"
+      },
+      {
+        "source": "node.name",
+        "target": "elk-server-1",
+        "description": "Cluster Instance Name"
+      },
+      {
+        "source": "discovery.seed_hosts",
+        "target": "elk-server-2,elk-server-3",
+        "description": "hosts to searched at startup for cluster information"
+      },
+      {
+        "source": "cluster.initial_master_nodes",
+        "target": "elk-server-1,elk-server-2,elk-server-3",
+        "description": "List of all cluster nodes"
+      },
+      {
+        "source": "bootstrap.memory_lock",
+        "target": "false",
+        "description": "Disables swapping for performance (if true must ensure ulimit set for mem)"
+      },
+      {
+        "source": "TAKE_FILE_OWNERSHIP",
+        "target": "1",
+        "description": "Ensure file mounts are chmodded at startup for write permission (k8s)"
+      }
+    ],
+    "volumes": [
+      {
+        "source": "elk-data",
+        "target": "/usr/share/elasticsearch/data",
+        "description": "Database files"
+      }
+    ]
+  }
+}

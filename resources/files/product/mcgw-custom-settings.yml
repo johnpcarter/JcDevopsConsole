@@ -1,0 +1,186 @@
+---
+
+ports:
+   %ifvar mcgw_ports_http -notnull%http: "%value mcgw_ports_http%"%nl%%endif%
+   %ifvar mcgw_ports_https -notnull%https: "%value mcgw_ports_https%"%nl%%endif%
+   key_alias: ssos
+
+%ifvar mcgw_api_gateway_url -notnull%
+api_gateway:
+   url: "%value mcgw_api_gateway_url%"
+   user: "%value mcgw_api_gateway_user%"
+   password: "%value mcgw_api_gateway_password%"
+   dir: "%value mcgw_api_gateway_dir%"
+   download_settings: true
+ %endif%
+
+api_endpoint:
+    base_path: "/gateway"  # /gateway
+
+ %ifvar mcgw_admin_api_user -notnull%
+admin_api:
+    user: "%value mcgw_admin_api_user%"
+    password: "%value mcgw_admin_api_password%"
+    %ifvar mcgw_admin_api_admin_path -notnull% admin_path: "%value mcgw_admin_api_admin_path%" %endif% # /rest/microgateway
+%endif%
+ 
+%ifvar mcgw_policies -notnull%
+policies:
+   user_auth: "%value mcgw_policies%" # internal | delegated
+%endif%
+
+%ifvar mcgw_logging -notnull%
+logging:
+   level: "%value mcgw_logging_logging%" # ERROR
+   path: "%value mcgw_logging_path%" # logs
+ %endif%
+
+%ifvar mcgw_applications_sync_enabled -notnull%
+applications_sync:
+  enabled: %value mcgw_applications_sync_enabled% # true | false
+  applications_to_sync: %value mcgw_applications_sync_applications_to_sync% # "all | registeredApplications | comma separated ids"
+  polling_interval_secs: %value mcgw_applications_sync_polling_interval_secs% # 10
+  connection_timeout_secs: %value mcgw_applications_sync_connection_timeout_secs% # 10
+%endif%
+
+%ifvar mcgw_faults_default_error_message -notnull%
+faults:  
+  default_error_message: "%value mcgw_faults_default_error_message%"
+  native_provider_fault: false
+%endif%
+
+%ifvar mcgw_extended_settings_apiKeyHeader -notnull%
+extended_settings:  
+  apiKeyHeader: "%value mcgw_extended_settings_apiKeyHeader%" # "x-Gateway-APIKey"  
+%endif%
+
+%ifvar mcgw_es_destination_hostName%
+es_destination:  
+  protocol: "%value mcgw_es_destination_protocol%"
+  hostName: "%value mcgw_es_destination_hostName%"
+  port: "%value mcgw_es_destination_port%" # 9240
+  indexName: "%value mcgw_es_destination_indexName" #gateway_default_analytics
+  userName: "%value mcgw_es_destination_userName%"
+  password: "%value mcgw_es_destination_password%"
+  metricsPublishInterval: "%value mcgw_es_destination_metricsPublishInterval%"
+  sendPolicyViolationEvent: "true"
+  sendAuditlogAPIManagementEvent: "false"  
+  sendAuditlogAccessProfileManagementEvent: "false"  
+  sendAuditlogAdministrationEvent: "false"  
+  sendAuditlogAliasManagementEvent: "false"  
+  sendAuditlogApplicationManagementEvent: "false"  
+  sendAuditlogApprovalManagementEvent: "false"  
+  sendAuditlogGroupManagementEvent: "false"  
+  sendAuditlogPackageManagementEvent: "false"  
+  sendAuditlogPlanManagementEvent: "false"  
+  sendAuditlogPolicyManagementEvent: "false"  
+  sendAuditlogPromotionManagementEvent: "false"  
+  sendAuditlogRuntimeDataManagementEvent: "false"  
+  sendAuditlogUserManagementEvent: "false"  
+  sendErrorEvent: "false"  
+  sendLifecycleEvent: "false"  
+  sendPerformanceMetrics: "false"  
+  sendPolicyViolationEvent: "false"
+%endif%
+
+gateway_destination:  
+  metricsPublishInterval: "60"  
+  sendAuditlogAPIManagementEvent: "true"  
+  sendAuditlogAccessProfileManagementEvent: "true"  
+  sendAuditlogAdministrationEvent: "true"  
+  sendAuditlogAliasManagementEvent: "true"  
+  sendAuditlogApplicationManagementEvent: "true"  
+  sendAuditlogApprovalManagementEvent: "true"  
+  sendAuditlogGroupManagementEvent: "true"  
+  sendAuditlogPackageManagementEvent: "true"  
+  sendAuditlogPlanManagementEvent: "true"  
+  sendAuditlogPolicyManagementEvent: "true"  
+  sendAuditlogPromotionManagementEvent: "true"  
+  sendAuditlogRuntimeDataManagementEvent: "true"  
+  sendAuditlogUserManagementEvent: "true"  
+  sendErrorEvent: "true"  
+  sendLifecycleEvent: "true"  
+  sendPerformanceMetrics: "true"  
+  sendPolicyViolationEvent: "true"
+
+%ifvar mcgw_security_settings_auth_servers equals('local')%
+security_settings:  
+  auth_servers:  
+  - LocalDefault    
+    id: "local"    
+    name: "local"    
+    description: "API Gateway as an Authorization server."    
+    type: "authServerAlias"    
+    owner: "Administrator"    
+    tokenGeneratorConfig:      
+      expiry: 0      
+      accessTokenExpInterval: 3600      
+      authCodeExpInterval: 600    
+    authServerScopes: []    
+    supportedGrantTypes:    
+      - "authorization_code"    
+      - "password"    
+      - "client_credentials"    
+      - "refresh_token"    
+      - "implicit"    
+    oauthTokens: []    
+    authServerType: "LOCAL_IS"
+%endif%
+
+%ifvar mcgw_service_registries equals('true')%
+service_registries:
+%ifvar mcgw_service_registries_consul_endpointURI -notnull%
+- ConsulDefault 
+  id: "ServiceConsulDefault"  
+  name: "ServiceConsulDefault"  
+  description: "Service Consul is a tool for discovering and configuring services\    
+  \ in IT infrastructure."  
+  type: "serviceRegistryAlias"  
+  owner: "Administrator"  
+  endpointURI: "%value mcgw_service_registries_consul_endpointURI%" # "http://localhost:8500/v1"  
+  heartBeatInterval: %value mcgw_service_registries_consul_heartBeatInterval%%nl%
+  password: "%value mcgw_service_registries_consul_password%"  
+  customHeaders: {}  
+  discoveryInfo:    
+    path: "/catalog/service/{serviceName}"    
+    httpMethod: "GET"  
+  registrationInfo:    
+    path: "/agent/service/register"    
+    httpMethod: "PUT"  
+  deRegistrationInfo:    
+    path: "/agent/service/deregister/{serviceId}"    
+    httpMethod: "PUT"  
+  serviceRegistryType: "SERVICE_CONSUL"  
+  connectionTimeout: 30  
+  readTimeout: 30
+%endif%
+%ifvar mcgw_service_registries_eureka_endpointURI -notnull%
+- EurekaDefault  
+  id: "EurekaDefault"  
+  name: "EurekaDefault"  
+  description: "Eureka is a REST based service that is primarily used in the AWS 
+  cloud\    
+  \ for locating services for the purpose of load balancing and failover of 
+  middle-tier servers"  
+  type: "serviceRegistryAlias"  
+  owner: "Administrator"  
+  endpointURI: "%value mcgw_service_registries_eureka_endpointURI%" # "http://localhost:8761"  
+  heartBeatInterval: %value mcgw_service_registries_eureka_heartBeatInterval%%nl%  
+  password: "%value mcgw_service_registries_eureka_password%"  
+  customHeaders: {}  
+  discoveryInfo:    
+    path: "/eureka/apps/{app}"    
+    httpMethod: "GET"  
+  registrationInfo:    
+    path: "/eureka/apps/{app}"    
+    httpMethod: "POST"  
+  deRegistrationInfo:    
+    path: "/eureka/apps/{app}/{instanceId}"    
+    httpMethod: "DELETE"  
+  serviceRegistryType: "EUREKA"  
+  connectionTimeout: 30  
+  readTimeout: 30
+%endif%
+%endif%
+
+---

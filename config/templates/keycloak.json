@@ -1,0 +1,79 @@
+{
+  "container": {
+    "ports": [
+      {
+        "internal": "8080",
+        "external": "8080",
+        "description": "Welcome Console",
+        "type": "http"
+      },
+      {
+        "internal": "8443",
+        "external": "8443",
+        "description": "Weclome Console",
+        "type": "https"
+      },
+      {
+        "internal": "9990",
+        "external": "9990",
+        "description": "???"
+      }
+    ],
+    "env": [
+      {
+        "source": "KEYCLOAK_USER",
+        "target": "Administrator",
+        "description": "system user"
+      },
+      {
+        "source": "KEYCLOAK_PASSWORD",
+        "target": "manage",
+        "description": "system password"
+      },
+      {
+        "source": "DB_VENDOR",
+        "target": "h2",
+        "description": "embedded DB"
+      },
+      {
+        "source": "KEYCLOAK_HOSTNAME",
+        "target": "localhost",
+        "description": "set to host name"
+      }
+    ],
+    "volumes": [
+      {
+        "source": "config",
+        "target": "/opt/jboss/keycloak/standalone/configuration",
+        "description": "Configuration "
+      },
+      {
+        "source": "data",
+        "target": "/opt/jboss/keycloak/standalone/data",
+        "description": "Data"
+      },
+      {
+        "source": "themes",
+        "target": "/opt/jboss/keycloak/themes",
+        "description": "Default & custom themes for UI"
+      }
+    ],
+    "description": "KeyCloak Authenticator",
+    "name": "keycloak",
+    "type": "KeyCloak",
+    "readinessProbe": {
+      "path": "/invoke/wm.server/ping",
+      "port": "5555",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/invoke/wm.server/ping",
+      "port": "5555",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

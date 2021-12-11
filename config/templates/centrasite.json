@@ -1,0 +1,69 @@
+{
+  "build": {
+    "name": "CentraSite Active SOA",
+    "productType": "centrasite",
+    "isSAGProduct": "true",
+    "primaryPort": "53305",
+    "hostName": "centrasite",
+    "sourceImageTag": "centos:latest",
+    "entryPoint": "cs-docker-init.sh",
+    "exitPoint": "cs-docker-stop.sh",
+    "healthCheck": "cs-docker-health-check.sh",
+    "buildCommands": [
+      {
+        "commandType": "run",
+        "buildTarget": "deprecated",
+        "display": "hidden",
+        "target": "sudo yum install -y libncurses*"
+      }
+    ],
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "INSTALL_VERSION",
+          "7"
+        ],
+        [
+          "securePort",
+          "53306"
+        ]
+      ]
+    }
+  },
+  "container": {
+    "name": "centrasite",
+    "description": "CentraSite Active SOA",
+    "type": "cs",
+    "ports": [
+      {
+        "internal": "53305",
+        "external": "53305",
+        "description": "Web Interface (http)",
+        "type": "other",
+        "publicPort": "30535"
+      },
+      {
+        "internal": "53306",
+        "external": "53306",
+        "description": "Web Interface (https)",
+        "type": "other",
+        "publicPort": "30536"
+      }
+    ],
+    "env": [
+    ],
+    "volumes": [
+      {
+        "source": "cs-data",
+        "target": "/opt/softwareag/CentraSite/data",
+        "description": "Config and Queue storage"
+      },
+      {
+        "source": "cs-files",
+        "target": "/opt/softwareag/CentraSite/files",
+        "description": "Embedded DB, certs, files etc."
+      }
+    ]
+  }
+}

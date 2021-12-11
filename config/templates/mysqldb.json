@@ -1,0 +1,89 @@
+{
+  "build": {
+    "name": "wm-mysqldb",
+    "primaryPort": "3306",
+    "productType": "external",
+    "sourceImageTag": "store/oracle/mysql-enterprise-server:5.7.24",
+    "entryPoint": "./entrypoint-wrapper.sh",
+    "targetImage": {
+      "_tag": "wm-mysql-enterprise-server-5.7.24:10.5"
+    },
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "env_WM_USER",
+          "wm"
+        ],
+        [
+          "env_WM_USER_PASSWORD",
+          "manage"
+        ],
+        [
+          "env_MYSQL_ROOT_PASSWORD",
+          "manage"
+        ]
+      ]
+    },
+    "buildCommands": [
+      {
+        "description": "MySQL Configuration",
+        "commandType": "file",
+        "fileType": "product",
+        "source": "my.cnf",
+        "target": "/etc/my.cnf",
+        "display": "readonly"
+      },
+      {
+        "description": "webMethods Schema",
+        "commandType": "file",
+        "fileType": "product",
+        "source": "mysql_webMethods_schema.tar",
+        "target": "/sag",
+        "display": "readonly"
+      },
+      {
+        "description": "Docker Entry Point",
+        "commandType": "file",
+        "fileType": "product",
+        "source": "mysql-entrypoint-wrapper.sh",
+        "target": "/entrypoint-wrapper.sh",
+        "display": "hidden"
+      }
+    ]
+  },
+  "container": {
+    "name": "mysqldb",
+    "description": "mySQL Database",
+    "image": "wm-mysql-enterprise-server-5.7.24:10.5",
+    "type": "MySQL",
+    "ports": [
+      {
+        "internal": "3306",
+        "external": "3306",
+        "description": "JDBC Connection",
+        "type": "other",
+        "publicPort": "30306"
+      }
+    ],
+    "env": [
+      {
+        "source": "MYSQL_ROOT_PASSWORD",
+        "target": "manage",
+        "description": "system password"
+      },
+      {
+        "source": "MYSQL_DATABASE",
+        "target": "default",
+        "description": "default database to create on startup"
+      }
+    ],
+    "volumes": [
+      {
+        "source": "mysql_db",
+        "target": "/var/lib/mysql",
+        "description": "Database files"
+      }
+    ]
+  }
+}

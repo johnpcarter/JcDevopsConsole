@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">jc.devops.console.k8s_._priv</value>
+  <value name="is_public">false</value>
+  <value name="encodeutf8">true</value>
+  <value name="shared">CnB1YmxpYyBzdGF0aWMgQnVpbGRbXSBidWlsZHMoSURhdGFbXSBidWlsZHMpIHsKCQoJaWYgKGJ1
+aWxkcyA9PSBudWxsKQoJCXJldHVybiBudWxsOwoJCglCdWlsZFtdIG91dCA9IG5ldyBCdWlsZFti
+dWlsZHMubGVuZ3RoXTsKCQoJZm9yIChpbnQgaSA9IDA7IGkgPCBidWlsZHMubGVuZ3RoOyBpKysp
+IHsKCQlvdXRbaV0gPSBuZXcgQnVpbGQoYnVpbGRzW2ldKTsKCX0KCQoJcmV0dXJuIG91dDsKfQoJ
+CnB1YmxpYyBzdGF0aWMgRGVwbG95bWVudFtdIGRlcGxveW1lbnRzKElEYXRhW10gZGVwbG95bWVu
+dHMpIHsKCQoJRGVwbG95bWVudFtdIG91dCA9IG5ldyBEZXBsb3ltZW50W2RlcGxveW1lbnRzLmxl
+bmd0aF07CgkKCWZvciAoaW50IGkgPSAwOyBpIDwgZGVwbG95bWVudHMubGVuZ3RoOyBpKyspIHsK
+CQlvdXRbaV0gPSBuZXcgRGVwbG95bWVudChkZXBsb3ltZW50c1tpXSk7Cgl9CgkKCXJldHVybiBv
+dXQ7Cn0=</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>com.jc.devops.docker.type.Build</value>
+    <value>com.jc.devops.docker.type.Deployment</value>
+    <value>java.util.List</value>
+  </array>
+</Values>

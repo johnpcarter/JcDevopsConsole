@@ -1,0 +1,109 @@
+{
+  "container": {
+    "ports": [
+      {
+        "internal": "5555",
+        "external": "5555",
+        "description": "Admin Port",
+        "type": "http"
+      },
+      {
+        "internal": "9999",
+        "external": "9999",
+        "description": "Diagnostic Port",
+        "type": "http"
+      }
+    ],
+    "env": [
+      {
+        "source": "api_gateway_url",
+        "target": "http://api-gateway:5555",
+        "description": "Master API Gateway"
+      },
+      {
+        "source": "api_gateway_user",
+        "target": "Administrator",
+        "description": ""
+      },
+      {
+        "source": "api_gateway_password",
+        "target": "",
+        "description": ""
+      },
+      {
+        "source": "api_gateway_default_maturity",
+        "target": "test",
+        "description": "Default maturity for new APIs"
+      },
+      {
+        "source": "api_gateway_default_app",
+        "target": "TEST",
+        "description": "Default app to be created for API"
+      },
+      {
+        "source": "api_gateway_allow_update",
+        "target": "false",
+        "description": "Allow existing API's to be overwritten"
+      },
+      {
+        "source": "JAVA_MIN_MEM",
+        "target": "256mb",
+        "description": "Configure minimum heap size for runtime"
+      },
+      {
+          "source": "JAVA_MAX_MEM",
+          "target": "1024mb",
+          "description": "Configure maximum heap size for runtime"
+      },
+      {
+          "source": "SECRET_PATH",
+          "target": "/home/secrets",
+          "description": "Specifies the path to a Kubernetes Secrets directory"
+      },
+      {
+          "source": "SAG_IS_HEALTH_ENDPOINT_ACL",
+          "target": "Anonymous",
+          "description": "Specifies the ACL used to secure the /health API"
+      },
+      {
+          "source": "SAG_IS_METRICS_ENDPOINT_ACL",
+          "target": "Anonymous",
+          "description": "Specifies the ACL used to secure the /metrics API"
+      },
+      {
+          "source": "SAG_IS_AUDIT_STDOUT_LOGGERS",
+          "target": "ALL",
+          "description": "list of logs to redirect to STDOUT"
+      }
+    ],
+    "volumes": [
+      {
+        "source": "wmdb",
+        "target": "/opt/softwareag/IntegrationServer/db",
+        "description": "Internal DB"
+      },
+      {
+        "source": "cache",
+        "target": "/opt/softwareag/IntegrationServer/cache",
+        "description": "Local Caches"
+      }
+    ],
+    "type": "msr",
+    "description": "Micro-Service Runtime",
+    "name": "wm-msr",
+    "readinessProbe": {
+      "path": "/invoke/wm.server/ping",
+      "port": "5555",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/invoke/wm.server/ping",
+      "port": "5555",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

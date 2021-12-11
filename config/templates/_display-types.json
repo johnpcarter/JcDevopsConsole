@@ -1,0 +1,137 @@
+[
+	{
+		"name": "mcgw_api_gateway_password",
+		"description": "API Gateway Password",
+		"display": "password"
+	},
+	{
+          "name": "uIPort",
+          "display": "editable",
+          "description": "API Gateway Web UI Port"
+    },
+    {
+          "name": "uIPortSecure",
+          "display": "editable",
+          "description": "API Gateway Web UI Secure Port"
+    },
+    {
+		"name": "useExternalELK",
+		"description": "Use External Elastic Search",
+		"display": "yesno"
+	},
+	{
+		"name": "useExternalKibana",
+		"description": "Use External Kibana instance",
+		"display": "yesno"
+	},
+	{
+		"name": "kibanaUrl",
+		"description": "Url for Kibana",
+		"display": "editable",
+		"conditions": ["useExternalKibana"]
+	},
+    {
+          "name": "ElkPortHttp",
+          "description": "Embedded Elastic Search Http Port",
+          "display": "hidden"
+    },
+    {
+          "name": "ElkPortTCP",
+          "description": "Embedded Elastic Search Http Port",
+          "display": "hidden"
+    },
+	{
+		"name": "elkExternalHost",
+		"description": "External ELK Server Host",
+		"conditions": ["useExternalELK"],
+		"display": "editable"
+	},
+	{
+		"name": "elkExternalPort",
+		"description": "External ELK Http Port",
+		"conditions": ["useExternalELK"],
+		"display": "editable"
+	},
+	{
+		"name": "elkUser",
+		"description": "ELK User id",
+		"conditions": ["useExternalELK"],
+		"display": "editable"
+	},
+	{
+		"name": "elkPassword",
+		"description": "ELK Password",
+		"conditions": ["useExternalELK"],
+		"display": "password"
+	},
+	{
+		"name": "elkPassword",
+		"description": "ELK Password",
+		"conditions": ["useExternalELK"],
+		"display": "password"
+	},
+	{
+		"name": "includeTools",
+		"description": "Include Management Tools",
+		"display": "yesno"
+	},
+	{
+		"name": "offHeapMB",
+		"description": "Off Heap Maximum (MB)",
+		"display": "editable"
+	},
+	{
+		"name": "clusterName",
+		"description": "Cluster Name",
+		"display": "editable",
+		"required": false
+	},
+	{
+		"name": "clusterHost",
+		"description": "Cluster Host",
+		"display": "editable",
+		"required": false
+	},
+	{
+		"name": "tsaPort",
+		"description": "Cluster Port",
+		"display": "editable",
+		"required": false
+	},
+	{
+		"name": "tsaGroupPort",
+		"description": "Cluster Group Port",
+		"display": "editable",
+		"required": false
+	},
+	{
+		"name": "someChoicesTest",
+		"display": "dropdown",
+		"choices": [
+			"choice1",
+			"choice2",
+			"choice3"
+		],
+		"required": false
+	},
+	{
+          "name": "mwsName",
+          "description": "MWS Instance Name",
+          "display": "editable"
+    },
+    {
+          "name": "dbUser",
+          "description": "DB User",
+          "display": "editable"
+    },
+    {
+          "name": "dbPassword",
+          "description": "DB Password",
+          "display": "editable"
+    },
+    {
+          "name": "dbUrl",
+          "description": "jdbc url for MYSQL Database",
+          "display": "editable"
+    }
+]

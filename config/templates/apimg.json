@@ -1,0 +1,198 @@
+{
+  "build": {
+    "name": "API Micro Gateway",
+    "productType": "apimg",
+    "isSAGProduct": "true",
+    "primaryPort": "4485",
+    "sourceImageTag": "alpine:latest",
+    "entryPoint": "apimg-docker-init.sh",
+    "exitPoint": "apimg-docker-stop.sh",
+    "healthCheck": "apimg-docker-health-check.sh",
+    "buildCommands": [
+      {
+        "commandType": "run",
+        "buildTarget": "pre-install",
+        "description": "Install unzip so that we can extract microgateway build below",
+        "fileType": "yum",
+        "target": "yum install -y unzip",
+        "display": "hidden"
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "install",
+        "description": "License file for API Gateway",
+        "fileType": "licenses",
+        "target": "/software/api-gateway-license.xml",
+        "display": "editable"
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "post-install",
+        "description": "Script to generate micro gateway zip file",
+        "fileType": "microgateway.sh",
+        "target": "cd /opt/softwareag/Microgateway; ./microgateway.sh createInstance -os linux -instance /opt/softwareag/microgateway.zip; cd ..;unzip microgateway.zip -d microgateway-linux",
+        "display": "hidden"
+      },
+      {
+        "commandType": "copy",
+        "buildTarget": "build",
+        "fileType": "copy",
+        "description": "copy from install build to build target",
+        "source": "/opt/softwareag/microgateway-linux",
+        "target": "/opt/softwareag/Microgateway",
+        "display": "hidden"
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "build",
+        "description": "Set permissions",
+        "fileType": "configure",
+        "target": "cd /opt/softwareag/Microgateway; chmod u+x ./setpermissions.sh; /opt/softwareag/Microgateway/setpermissions.sh",
+        "display": "hidden"
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "fileType": "licenses",
+        "target": "/opt/softwareag/Microgateway/config/license.xml",
+        "display": "hidden"
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "fileType": "product",
+        "description": "custom settings for micro gateway",
+        "source": "mcgw-custom-settings.yml",
+        "target": "/opt/softwareag/Microgateway/config/custom-settings.yml",
+        "display": "editable"
+      }
+    ],
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "env_mcgw-custom-settings",
+          "custom-settings.yml"
+        ],
+        [
+          "mcgw_api_gateway_url",
+          "http://wm-api-gateway:5555"
+        ],
+        [
+          "mcgw_api_gateway_user",
+          "Administrator"
+        ],
+         [
+          "mcgw_api_gateway_password",
+          "manage"
+        ]
+      ]
+    }
+  },
+  "container": {
+    "description": "Microgateway",
+    "ports": [
+      {
+        "internal": "4485",
+        "external": "4485",
+        "description": "API access point",
+        "type": "http"
+      }
+    ],
+    "env": [
+      {
+        "source": "mcgw_microgatewayPool_microgatewayPoolName",
+        "target": "Default",
+        "description": "Allows you to view Microgateways in a group from API Gateway"
+      },
+      {
+        "source": "mcgw_microgatewayPool_microgatewayPoolDescription",
+        "target": "",
+        "description": ""
+      },
+      {
+        "source": "mcgw_api_gateway_url",
+        "target": "http://wm-api-gateway:5555",
+        "description": "Master API Gateway"
+      },
+      {
+        "source": "mcgw_api_gateway_user",
+        "target": "Administrator",
+        "description": "User for API gateway access"
+      },
+      {
+        "source": "mcgw_api_gateway_password",
+        "target": "manage",
+        "description": "Password for API gateway access"
+      },
+      {
+        "source": "mcgw_downloads_policies",
+        "target": "",
+        "description": "Global policies to download"
+      },
+      {
+        "source": "mcgw_downloads_apis",
+        "target": "",
+        "description": "List of API's to be managed, policies will be fetched from API Gateway"
+      },
+      {
+        "source": "mcgw_downloads_applications",
+        "target": "",
+        "description": "Global applications to download"
+      },
+      {
+        "source": "mcgw_applications_sync",
+        "target": "true",
+        "description": "Sync Applications from Gateway"
+      },
+      {
+        "source": "mcgw_polling_interval_secs",
+        "target": "10",
+        "description": "Polling interval in secs for applications sync"
+      },
+      {
+        "source": "mcgw_faults_default_error_message",
+        "target": "API Gateway encountered an error. Error Message $ERROR_MESSAGE, Request Details Service - $SERVICE, Operation - $OPERATION, Invocation Time $TIME , User - $USER and Application $CONSUMER_APPLICATION",
+        "description": "Over-ride error message from back-end"
+      },
+      {
+        "source": "mcgw_extended_settings_apiKeyHeader",
+        "target": "x-Gateway-APIKey",
+        "description": "Header attribute for app id"
+      },
+      {
+        "source": "api_server_url",
+        "target": "http://wm-msr:5555",
+        "description": "API Container endpoint"
+      },
+      {
+        "source": "api_server_user",
+        "target": "Administrator",
+        "description": "API Container default User"
+      },
+      {
+        "source": "api_server_password",
+        "target": "manage",
+        "description": "API Container default Password"
+      }
+    ],
+    "volumes": [],
+    "type": "MicroGateway (Standalone)",
+    "description": "API Micro Gateway (dynamic)",
+    "name": "wm-api-micro",
+    "readinessProbe": {
+      "path": "/rest/microgateway/status",
+      "port": "4485",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/rest/microgateway/status",
+      "port": "4485",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

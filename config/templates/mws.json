@@ -1,0 +1,111 @@
+{
+  "build": {
+    "name": "MyWebMethods",
+    "productType": "um",
+    "isSAGProduct": "true",
+    "primaryPort": "8585",
+    "hostName": "mws",
+    "sourceImageTag": "centos:latest",
+    "entryPoint": "mws-docker-init.sh",
+    "exitPoint": "mws-docker-stop.sh",
+    "healthCheck": "mws-docker-health-check.sh",
+    "buildCommands": [
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "mws db connector with data direct driver",
+        "fileType": "support",
+        "source": "mws.db.xml",
+        "target": "/opt/softwareag/MWS/server/default/config",
+        "display": "hidden"
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "post-install",
+        "description": "make sure data dir exists",
+        "target": "mkdir /opt/softwareag/MWS/server/default/data",
+        "display": "hidden"
+      }
+    ],
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "mwsName",
+          "default"
+        ],
+        [
+          "dbUser",
+          ""
+        ],
+        [
+          "dbPassword",
+          ""
+        ],
+        [
+          "dbUrl",
+          "jdbc:wm:mysql://mysqldb:3306;databaseName=WM"
+        ]
+      ]
+    }
+  },
+  "container": {
+    "name": "wm-mws",
+    "description": "MyWebMethods Portal",
+    "ports": [
+      {
+        "internal": "8585",
+        "external": "8585",
+        "description": "Portal Access",
+        "type": "http"
+      },
+      {
+        "internal": "8099",
+        "external": "8099",
+        "description": "",
+        "type": "http"
+      },
+      {
+        "internal": "8100",
+        "external": "8100",
+        "description": "",
+        "type": "http"
+      }
+    ],
+    "env": [],
+    "volumes": [
+      {
+        "source": "mws_deploy",
+        "target": "/opt/softwareag/MWS/server/default/deploy",
+        "description": "Portlets"
+      },
+      {
+        "source": "mws_config",
+        "target": "/opt/softwareag/MWS/server/default/config",
+        "description": "Configuration"
+      },
+      {
+        "source": "mws_data",
+        "target": "/opt/softwareag/MWS/server/default/data",
+        "description": "Data"
+      }
+    ],
+    "type": "MyWebMethods",
+    "description": "myWebMethods",
+    "name": "mws",
+    "readinessProbe": {
+      "path": "/",
+      "port": "18101",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/",
+      "port": "18101",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

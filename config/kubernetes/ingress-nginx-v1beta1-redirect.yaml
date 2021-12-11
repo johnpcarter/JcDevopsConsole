@@ -1,0 +1,17 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1beta1
+metadata:
+  name: %value appPrefix%%value name%-redirects%nl%
+  namespace: %value namespace%%nl%
+  annotations:
+	kubernetes.io/ingress.class: "nginx"
+	nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules: 
+	- http:
+		paths: %loop paths%%ifvar redirect equals('false')%
+		  - path: %value path%(/|$)(.*)%nl%
+			backend:
+			  serviceName: %value service%%nl%
+			  servicePort: %value port%%nl%%endifvar%%endloop%

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webMethods/WebSocket</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">jc.devops.console.docker_.ws:container</value>
+  <value name="node_pkg">JcDevopsConsole</value>
+  <value name="is_public">false</value>
+  <value name="uri">/docker/container</value>
+  <value name="behaviour">Server</value>
+  <record name="callback" javaclass="com.wm.util.Values">
+    <value name="onConnect">jc.devops.console.docker_.ws.container:onConnect</value>
+    <value name="onBinary">jc.devops.console.docker_.ws.container:onBinary</value>
+    <value name="onText">jc.devops.console.docker_.ws.container:onText</value>
+    <value name="onClose">jc.devops.console.docker_.ws.container:onClose</value>
+    <value name="onError">jc.devops.console.docker_.ws.container:onError</value>
+  </record>
+</Values>

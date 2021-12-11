@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getPackageInfo</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ly8gSW5wdXQKCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yID0gcGlwZWxpbmUuZ2V0Q3Vyc29y
+KCk7ClN0cmluZyBwYWNrYWdlc0RpciA9IElEYXRhVXRpbC5nZXRTdHJpbmcocGlwZWxpbmVDdXJz
+b3IsICJwYWNrYWdlc0RpciIpOwpTdHJpbmcgcGFja2FnZU5hbWUgPSBJRGF0YVV0aWwuZ2V0U3Ry
+aW5nKHBpcGVsaW5lQ3Vyc29yLCAibmFtZSIpOwoKLy8gcHJvY2VzcwoKUGFja2FnZUluZm8gcGNr
+ZyA9IG51bGw7CgppZiAocGFja2FnZXNEaXIgIT0gbnVsbCkKCXBja2cgPSBQYWNrYWdlSW50cm9z
+cGVjdG9yLmRlZmF1bHRJbnN0YW5jZShwYWNrYWdlc0RpciwgZmFsc2UpLnBhY2thZ2VJbmZvKHBh
+Y2thZ2VOYW1lKTsKZWxzZQoJcGNrZyA9IFBhY2thZ2VJbnRyb3NwZWN0b3IuZGVmYXVsdEluc3Rh
+bmNlKHRydWUpLnBhY2thZ2VJbmZvKHBhY2thZ2VOYW1lKTsKCi8vIG91dHB1dAoKaWYgKHBja2cg
+IT0gbnVsbCkKCUlEYXRhVXRpbC5wdXQocGlwZWxpbmVDdXJzb3IsICJwYWNrYWdlIiwgcGNrZy50
+b0lEYXRhKHRydWUsIHRydWUsIG51bGwpKTsKcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw==</value>
+</Values>

@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: %value appPrefix%%value appName%%nl%
+  labels:
+    app: %value appPrefix%%value appName%%nl%
+    deploymentId: %value deploymentId%%nl%
+    serviceId: %value serviceId%%nl%
+  namespace: %value namespace%%nl%
+  annotations:
+    monitoring: "%value requiresMonitoring%"%nl%
+spec:
+  replicas: %value replicas%%nl%
+  serviceName: %value appPrefix%%value appName%-server
+  selector:
+    matchLabels: 
+      app: %value appPrefix%%value appName%%nl%
+  template:
+    metadata:
+      labels:
+        app: %value appPrefix%%value appName%%nl%
+    spec:
+      hostname: %value hostname%%nl%
+      restartPolicy: %value restartPolicy%%nl%
+      containers: %loop containers%%ifvar active equals('true')%
+      - name: %value name%%nl%
+        image: %value image%%nl%
+        ports: %loop ports%
+        - containerPort: %value internal%%nl%
+          name: %value description%%endloop%%ifvar resources -notnull%%nl%
+        resources:
+          requests:
+            cpu: %value cpu% #"0.5"
+            memory: %value mem% #"256m"
+          limits:
+            cpu: %value maxcpu% #"1"
+            memory: %value maxmem%%endif%%ifvar readinessProbe -notnull%
+        readinessProbe:
+          httpGet:
+            path: %value readinessProbe/path%%nl%
+            port: %value readinessProbe/port%%nl%
+          initialDelaySeconds: %value readinessProbe/initialDelaySeconds%%nl%
+          timeoutSeconds: %value readinessProbe/timeoutSeconds%%nl%
+          periodSeconds: %value readinessProbe/periodSeconds%%endif%%ifvar livenessProbe -notnull%
+        livenessProbe:
+          httpGet:
+            path: %value livenessProbe/path%%nl%
+            port: %value livenessProbe/port%%nl%
+          initialDelaySeconds: %value livenessProbe/initialDelaySeconds%%nl%
+          timeoutSeconds: %value livenessProbe/timeoutSeconds%%endif%%ifvar volumes -notnull%
+        volumeMounts: %loop volumes%
+        - mountPath: %value target%%nl%
+          name: %value source%%endloop%%endif%%ifvar env -notnull%
+        env: %loop env%
+        - name: "%value source%"%nl%
+          value: "%value target%"%endloop%%endif%%endloop%%endloop%%nl%
+  volumeClaimTemplates: %loop /containers%%ifvar active equals('true')%%loop volumes%
+    - metadata:
+        name: %value source%%nl%
+      spec:
+        accessModes:
+          - %value k8sAccessMode%%nl%
+        resources:
+          requests:
+            storage: %value k8sCapacity%%nl%
+        storageClassName: %value k8sStorageType%%endloop%%endif%%endloop%
+      
+

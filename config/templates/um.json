@@ -1,0 +1,83 @@
+{
+  "build": {
+    "name": "Universal Mesaging",
+    "productType": "um",
+    "isSAGProduct": "true",
+    "primaryPort": "9000",
+    "hostName": "wm-um",
+    "sourceImageTag": "centos:latest",
+    "entryPoint": "um-docker-init.sh",
+    "exitPoint": "um-docker-stop.sh",
+    "healthCheck": "um-docker-health-check.sh",
+    "buildCommands": [
+       {
+        "commandType": "run",
+        "buildTarget": "post-install",
+        "description": "Delete unnecessary tools",
+        "target": "cd /opt/softwareag/UniversalMessaging/tools; rm -Rf InstanceManager migrate",
+        "display": "hidden"
+       },
+       {
+        "commandType": "run",
+        "buildTarget": "post-install",
+        "description": "Delete unnecessary tools",
+        "target": "cd /opt/softwareag/UniversalMessaging; rm -Rf cplus doc extras javascript python java",
+        "display": "hidden"
+       },
+        {
+        "commandType": "run",
+        "buildTarget": "post-install",
+        "description": "Delete unnecessary tools",
+        "target": "cd /opt/softwareag/UniversalMessaging/server; rm -Rf templates profiles",
+        "display": "hidden"
+       },
+       {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "updated nserver script references /bin/sh instead of /bin/bash (support alpine)",
+        "fileType": "product",
+        "source": "nserver",
+        "target": "/opt/softwareag/UniversalMessaging/server/umserver/bin",
+        "display": "hidden"
+       },
+       {
+        "commandType": "run",
+        "buildTarget": "build",
+        "target": "chmod u+x /opt/softwareag/UniversalMessaging/server/umserver/bin/nserver",
+        "display": "hidden"
+       }
+    ],
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "env_realm",
+          "umserver"
+        ]
+      ]
+    }
+  },
+  "container": {
+    "name": "um",
+    "description": "Universal Messaging Server",
+    "type": "MySQL",
+    "ports": [
+      {
+        "internal": "9000",
+        "external": "9000",
+        "description": "Client connection (nsp)",
+        "type": "other",
+        "publicPort": "30900"
+      }
+    ],
+    "env": [
+    ],
+    "volumes": [
+      {
+        "source": "umserver",
+        "target": "/opt/softwareag/UniversalMessaging/server/umserver/data",
+        "description": "Config and Queue storage"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "container": {
+    "description": "Microgateway (Standalone)",
+    "ports": [
+      {
+        "internal": "4485",
+        "external": "4485",
+        "description": "API access point",
+        "type": "http"
+      }
+    ],
+    "env": [
+      {
+        "source": "api_server_url",
+        "target": "http://wm-msr:5555",
+        "description": "API Container endpoint"
+      },
+      {
+        "source": "api_server_user",
+        "target": "Administrator",
+        "description": "API Container default User"
+      },
+      {
+        "source": "api_server_password",
+        "target": "manage",
+        "description": "API Container default Password"
+      },
+      {
+        "source": "mcgw_archive_file",
+        "target": "/apigw-archive.zip",
+        "description": "API Gateway archive file for standalone configuration"
+      }
+    ],
+    "volumes": [],
+    "description": "API Micro Gateway (standalone)",
+    "name": "wm-api-micro",
+    "type": "MicroGateway (Standalone)",
+    "readinessProbe": {
+      "path": "/rest/microgateway/status",
+      "port": "4485",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/rest/microgateway/status",
+      "port": "4485",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

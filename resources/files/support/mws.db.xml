@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><CONFIG>
+    <CONNECTION default="true" displayname="Default" id="1" name="default" type="ms">
+        <SQLWORKERCLASS>com.webmethods.portal.service.sql.core.BaseSqlWorker</SQLWORKERCLASS>
+        <CONNPROVIDERCLASS>com.webmethods.portal.service.sql.core.provider.pool.PooledConnectionProvider</CONNPROVIDERCLASS>
+        <PARAMS>
+            <DRIVER>com.wm.dd.jdbc.mysql.MySQLDriver</DRIVER>
+            <URL>%value dbUrl%</URL>
+            <USER>%value dbUser%</USER>
+			<!-- Password could be specified in clear text, it will be automatically encrypted during MWS startup -->
+            <PASSWORD>%value dbPassword%</PASSWORD> 
+            <CACHESTATEMENTS>false</CACHESTATEMENTS>
+            <TESTSQL>SELECT COUNT(*) FROM TBLTHING WHERE IDTHING = 1</TESTSQL>            
+            <MAXCONNECTIONS>100</MAXCONNECTIONS>
+            <MINCONNECTIONS>0</MINCONNECTIONS>
+            <!-- Max amount of idle time (in seconds) of the objects pooled by this pool -->
+            <IDLETIMEOUT>60</IDLETIMEOUT>
+            <!-- Time (in seconds) between eviction runs -->
+            <CLEANUPPERIOD>10</CLEANUPPERIOD>
+        </PARAMS>
+    </CONNECTION>
+</CONFIG>

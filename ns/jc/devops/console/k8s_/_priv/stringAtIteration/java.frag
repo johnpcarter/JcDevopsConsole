@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">stringAtIteration</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ly8gcGlwZWxpbmUgaW4KCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yID0gcGlwZWxpbmUuZ2V0
+Q3Vyc29yKCk7ClN0cmluZ1tdIHN0cmluZ3MgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nQXJyYXkocGlw
+ZWxpbmVDdXJzb3IsICJzdHJpbmdzIik7ClN0cmluZyBpdGVyYXRpb24gPSBJRGF0YVV0aWwuZ2V0
+U3RyaW5nKHBpcGVsaW5lQ3Vyc29yLCAiJGl0ZXJhdGlvbiIpOwoKLy8gcHJvY2VzcyAKClN0cmlu
+ZyBzdHIgPSBudWxsOwppbnQgaSA9IEludGVnZXIucGFyc2VJbnQoaXRlcmF0aW9uKTsKCmlmIChp
+ID4gMCAmJiBpIDw9IHN0cmluZ3MubGVuZ3RoKSB7CglzdHIgPSBzdHJpbmdzW2ktMV07Cn0gZWxz
+ZSB7Cgl0aHJvdyBuZXcgU2VydmljZUV4Y2VwdGlvbigiSXRlcmF0aW9uIG91dCBvZiBib3VuZHMg
+KCIgKyBpICsgIi8iICsgc3RyaW5ncy5sZW5ndGggKyAiKSIpOwp9Ci8vIHBpcGVsaW5lIG91dAoK
+SURhdGFVdGlsLnB1dChwaXBlbGluZUN1cnNvciwgInN0cmluZyIsIHN0cik7CnBpcGVsaW5lQ3Vy
+c29yLmRlc3Ryb3koKTs=</value>
+</Values>

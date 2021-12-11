@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">jc.devops.console.packages_._priv</value>
+  <value name="is_public">false</value>
+  <value name="shared"></value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>com.wm.util.coder.IDataBinCoder</value>
+    <value>com.wm.util.coder.XMLCoder</value>
+    <value>com.jc.wm.introspection.PackageInfo</value>
+    <value>com.jc.wm.introspection.PackageIntrospector</value>
+    <value>com.wm.app.b2b.server.ServerAPI</value>
+    <value>java.io.BufferedReader</value>
+    <value>java.io.File</value>
+    <value>java.io.FileNotFoundException</value>
+    <value>java.io.FileReader</value>
+    <value>java.io.IOException</value>
+    <value>java.io.Reader</value>
+    <value>java.nio.file.FileSystems</value>
+    <value>java.nio.file.Files</value>
+    <value>java.nio.file.Path</value>
+    <value>java.util.ArrayList</value>
+    <value>java.util.Collection</value>
+    <value>java.util.HashMap</value>
+    <value>java.util.Iterator</value>
+    <value>java.util.List</value>
+    <value>java.util.Map</value>
+    <value>java.util.Scanner</value>
+    <value>java.util.regex.MatchResult</value>
+  </array>
+</Values>

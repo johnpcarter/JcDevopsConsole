@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: %value volumeName%%nl%
+  namespace: %value namespace%%nl%
+spec: 
+  accessModes: 
+    - %value accessMode%%nl%
+  capacity: 
+    storage: %value capacity%%nl%
+  hostPath: 
+    path: %value path%%nl%
+  storageClassName: %value storageType%%nl%

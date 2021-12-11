@@ -1,0 +1,92 @@
+{
+  "build": {
+    "name": "API Portal",
+    "productType": "apipr",
+    "isSAGProduct": "true",
+    "primaryPort": "18101",
+    "hostName": "api-portal",
+    "sourceImageTag": "centos:latest",
+    "entryPoint": "apipr-docker-init.sh",
+    "exitPoint": "apipr-docker-stop.sh",
+    "healthCheck": "apipr-docker-health-check.sh",
+    "buildCommands": [
+      {
+        "commandType": "run",
+        "buildTarget": "pre-build",
+        "description": "Required in order for Portal to start",
+        "fileType": "yum",
+        "target": "yum install -y fontconfig",
+        "display": "hidden"
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Ensures that all services are started automatically when starting up",
+        "fileType": "install",
+        "source": "agent.user.cfg",
+        "target": "/opt/softwareag/API_Portal/server/bin/agent.user.cfg",
+        "display": "hidden"
+      },
+       {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "License key for API Portal",
+        "fileType": "licenses",
+        "target": "/opt/softwareag/API_Portal/license.xml",
+        "display": "hidden"
+      }
+    ],
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "securePort",
+          "18102"
+        ]
+      ]
+    }
+  },
+  "container": {
+      "name": "api-portal",
+      "description": "API Portal",
+      "ports": [
+      {
+        "internal": "18101",
+        "external": "18101",
+        "description": "Web Access",
+        "type": "http"
+      },
+      {
+        "internal": "18102",
+        "external": "18102",
+        "description": "Web Access",
+        "type": "https"
+      }
+    ],
+    "env": [],
+    "volumes": [
+      {
+        "source": "apiportal",
+        "target": "/opt/softwareag/API_Portal/server/bin/work",
+        "description": "Portal Storage"
+      }
+    ],
+    "type": "API Portal",
+    "description": "API Portal",
+    "name": "api-portal",
+    "readinessProbe": {
+      "path": "/",
+      "port": "18101",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/",
+      "port": "18101",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1beta1
+metadata:
+  name: %value appPrefix%%value name%%nl%
+  namespace: %value namespace%%nl%
+spec:
+  rules:
+    - http:
+        paths: %loop paths%%ifvar redirect equals('false')%
+          - path: %value path%%nl%
+            backend:
+              serviceName: %value service%%nl%
+              servicePort: %value port%%nl%%endifvar%%endloop%

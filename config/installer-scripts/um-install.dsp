@@ -1,0 +1,27 @@
+#Fri Nov 15 17:16:43 UTC 2019
+NUMRegCheckbox=__VERSION1__,1,0,Register+Windows+service%2FUNIX+daemon+for+automatic+startup
+HostName=%value hostName%%nl%
+NUM.Realm.Server.Name.ID=__VERSION1__,%value realm%%nl%
+NUM.Interface.Port.ID=__VERSION1__,%value primaryPort%%nl%
+NUMRealmServer.LicenseFile.text=__VERSION1__,%2Fsoftware%2FlicenseKey.xml
+imageFile=/software/%value imageName%%nl%
+NUM.Data.Dir.ID=__VERSION1__,%2Fopt%2Fsoftwareag%2FUniversalMessaging%2Fserver%2F%value realm%%nl%
+SPMUsingCC=__VERSION1__,1,0,Plan+to+use+Command+Central
+com.wm.distman.utils_separator0=0
+LicenseAgree=Accept
+SPMAdditionalInfoDescriptionTextBlock=0
+SPMGeneralDescriptionTextBlock=0
+NUM.Profile.ID=__VERSION1__,3,0_,1,2,webMethods+suite+use+cases+%28large+messages%2C+transactions%2C+persistence%29,Standalone+use+cases+%28small+messages%2C+non-transactional%2C+transient+data%29,Custom
+NUM.Product.Name.ID=0
+com.wm.distman.utils_panel1=0
+com.wm.distman.utils_panel0=0
+SPMTitleTextBlock=0
+NUM.Interface.Binding.ID=__VERSION1__,3,0_,1,2,ALL,172.17.0.3,127.0.0.1,ALL
+NUM.Purpose.ID=__VERSION1__,2,0_,1,New+installation,Side-by-side+installation+for+upgrade
+InstallDir=/opt/softwareag
+NUM.Profile.Custom.file=__VERSION1__,
+InstallProducts=e2ei/11/ACDL_10.5.0.0.175/ACDL/ACDLDeployerSharedBundle,e2ei/11/TPL_10.5.0.0.12/License/license,e2ei/11/TPS_10.5.0.0.90/SCG/tppSEC,e2ei/11/LIC_5.7.1.0.865/LICRepository/LICRepository,e2ei/11/IS_10.5.0.0.84/integrationServer/integrationServerMigrationFrameworkLib,e2ei/11/NUM_TOOLS_10.5.0.0.130/UniversalMessaging/NUMMigration,e2ei/11/SSX_TLS_10.5.0.0.12/API/SSX_TLS,e2ei/11/TPS_10.5.0.0.90/SCG/jsw,e2ei/11/TPS_10.5.0.0.90/Platform/TPS,e2ei/11/LIC_5.7.1.0.865/LICUtil/LICUtil,e2ei/11/SJP_1.8.0.0.827/Infrastructure/sjp,e2ei/11/WIS_10.5.0.0.222/Infrastructure/WISSharedBundles,e2ei/11/ZSL_10.5.0.0.145/Platform/ZSLSharedBundles,e2ei/11/NUM_10.5.0.0.123831/UniversalMessaging/NUMInstanceManager,e2ei/11/TPS_10.5.0.0.90/SCG/log4j,e2ei/11/WIS_10.5.0.0.222/Infrastructure/WISSharedLibs,e2ei/11/NUM_TOOLS_10.5.0.0.130/UniversalMessaging/NUMspm,e2ei/11/CMP_10.5.0.0.42/CMP/CMP,e2ei/11/OSGI_10.5.0.0.444/Platform/OSGI,e2ei/11/TPS_10.5.0.0.90/SCG/tppGf,e2ei/11/NUM_10.5.0.0.123831/UniversalMessaging/NUMRepository,e2ei/11/BR_10.5.0.0.272/Broker/PIFSharedBundles,e2ei/11/CMP_10.5.0.0.42/CMP/CMP_API,e2ei/11/TPS_10.5.0.0.90/SCG/loggers,e2ei/11/NUM_10.5.0.0.123831/UniversalMessaging/NUMRealmServer,e2ei/11/WSC_10.5.0.0.174/SCG/SCGCommon,e2ei/11/SPM_10.5.0.0.185/Platform/SPM,e2ei/11/NUM_10.5.0.0.123831/UniversalMessaging/NUMTemplateApplications,e2ei/11/LAR_10.5.0.0.249/Platform/LARSharedBundles,e2ei/11/IS_10.5.0.0.84/integrationServer/ISSharedBundles,e2ei/11/NUM_10.5.0.0.123831/UniversalMessaging/NUMEnterpriseManager,e2ei/11/NUM_10.5.0.0.123831/UniversalMessaging/NUMClient,e2ei/11/LIC_5.7.1.0.865/LICSharedLibsJava/LICSharedLibsJava,e2ei/11/BR_10.5.0.0.272/Broker/BrokerJMSShared
+NUM.License.file.text.ID=0
+SPMConfigPanelPortsNotification=1
+SPMAppOrService=__VERSION1__,1,0,Register+Windows+service%2FUNIX+daemon+for+automatic+startup+of+Platform+Manager
+NUM.Instance.Create.ID=__VERSION1__,1,0_,Create+Server+Instance

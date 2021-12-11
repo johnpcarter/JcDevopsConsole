@@ -1,0 +1,134 @@
+{
+  "build": {
+    "name": "terracotta-db-server",
+    "productType": "tc",
+    "isSAGProduct": "true",
+    "primaryPort": "9410",
+    "hostName": "terracotta-server",
+    "sourceImageTag": "centos:latest",
+    "entryPoint": "tc-docker-init.sh",
+    "exitPoint": "tc-docker-stop.sh",
+    "healthCheck": "tc-docker-health-check.sh",
+    "buildCommands": [
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Terracotta Configuration",
+        "fileType": "product",
+        "source": "tc-config.xml",
+        "target": "/opt/softwareag/TerracottaDB/server/conf",
+        "display": "editable"
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Terracotta start script replacement",
+        "fileType": "product",
+        "source": "start-tc-server.sh",
+        "target": "/opt/softwareag/TerracottaDB/server/bin/start-tc-server.sh",
+        "display": "hidden"
+      },
+      {
+        "commandType": "run",
+        "buildTarget": "build",
+        "description": "Remove tools",
+        "fileType": "run",
+        "target": "rm -r /opt/softwareag/TerracottaDB/tools",
+        "display": "hidden",
+        "conditions": ["includeTools==false"]
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Terracotta start script replacement",
+        "fileType": "product",
+        "source": "tc-start-mgmt.sh",
+        "target": "/opt/softwareag/TerracottaDB/tools/management/bin/start.sh",
+        "display": "hidden",
+        "conditions": ["includeTools"]
+      },
+      {
+        "commandType": "file",
+        "buildTarget": "build",
+        "description": "Terracotta start script replacement",
+        "fileType": "product",
+        "source": "stop-tc-mgmt.sh",
+        "target": "/opt/softwareag/TerracottaDB/tools/management/bin/stop.sh",
+        "display": "hidden",
+        "conditions": ["includeTools"]
+      }
+    ],
+    "args": {
+      "dataType": "Map",
+      "value": [
+        [
+          "includeTools",
+          "true"
+        ],
+        [
+          "offHeapMB",
+          "512"
+        ],
+        [
+          "clusterName",
+          ""
+        ],
+        [
+          "clusterHost",
+          ""
+        ],
+        [
+          "tsaPort",
+          "9410"
+        ],
+        [
+          "tsaGroupPort",
+          "9430"
+        ]
+      ]
+    }
+  },
+  "container": {
+    "name": "terracotta-server",
+    "description": "Terracotta DB Server",
+    "ports": [
+      {
+        "internal": "9410",
+        "external": "9410",
+        "description": "Socket",
+        "type": "other"
+      },
+      {
+        "internal": "9480",
+        "external": "9480",
+        "description": "Web UI",
+        "type": "http"
+      }
+    ],
+    "env": [],
+    "volumes": [
+      {
+        "source": "tc-data",
+        "target": "/home/sag",
+        "description": "Data"
+      }
+    ],
+    "type": "terracotta-server",
+    "description": "Terracotta DB",
+    "name": "tc",
+    "readinessProbe": {
+      "path": "/",
+      "port": "9410",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    },
+    "livenessProbe": {
+      "path": "/",
+      "port": "9410",
+      "initialDelaySeconds": "120",
+      "periodSeconds": "60",
+      "timeoutSeconds": "10"
+    }
+  }
+}

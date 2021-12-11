@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">jc.devops.console.docker_._priv.dapi</value>
+  <value name="is_public">false</value>
+  <value name="shared">CnByaXZhdGUgc3RhdGljIE1hcDxTdHJpbmcsIERvY2tlckNvbXBvc2VJbXBsPiBfY29tcHMgPSBu
+ZXcgSGFzaE1hcDxTdHJpbmcsIERvY2tlckNvbXBvc2VJbXBsPigpOwoJCnByaXZhdGUgc3RhdGlj
+IEJ1aWxkUGFyYW1bXSBjb252ZXJ0SURhdGFQYXJhbXMoSURhdGFbXSBwYXJhbXMpIHsKCglpZiAo
+cGFyYW1zID09IG51bGwgfHwgcGFyYW1zLmxlbmd0aCA9PSAwKQoJCXJldHVybiBuZXcgQnVpbGRQ
+YXJhbVswXTsKCQoJQnVpbGRQYXJhbVtdIGJwYXJhbXMgPSBuZXcgQnVpbGRQYXJhbVtwYXJhbXMu
+bGVuZ3RoXTsKCWludCBpID0gMDsKCQoJZm9yIChJRGF0YSBwYXJhbSA6IHBhcmFtcykgewoJCQoJ
+CUlEYXRhQ3Vyc29yIGMgPSBwYXJhbS5nZXRDdXJzb3IoKTsKCQlTdHJpbmcgbmFtZSA9IElEYXRh
+VXRpbC5nZXRTdHJpbmcoYywgIm5hbWUiKTsKCQlTdHJpbmcgdmFsdWUgPSBJRGF0YVV0aWwuZ2V0
+U3RyaW5nKGMsICJ2YWx1ZSIpOwoKCQlicGFyYW1zW2krK10gPSBuZXcgQnVpbGRQYXJhbShuYW1l
+LCB2YWx1ZSk7CgkJYy5kZXN0cm95KCk7Cgl9CgkKCXJldHVybiBicGFyYW1zOwp9</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>com.wm.app.b2b.server.UnknownServiceException</value>
+    <value>com.wm.app.b2b.server.ServerAPI</value>
+    <value>java.io.BufferedReader</value>
+    <value>java.io.File</value>
+    <value>java.io.IOException</value>
+    <value>java.io.OutputStream</value>
+    <value>java.net.URI</value>
+    <value>java.net.URLEncoder</value>
+    <value>java.nio.file.FileSystems</value>
+    <value>java.nio.file.Paths</value>
+    <value>java.text.DateFormat</value>
+    <value>java.text.SimpleDateFormat</value>
+    <value>java.util.ArrayList</value>
+    <value>java.util.Collection</value>
+    <value>java.util.Date</value>
+    <value>java.util.HashMap</value>
+    <value>java.util.HashSet</value>
+    <value>java.util.Iterator</value>
+    <value>java.util.List</value>
+    <value>java.util.Map</value>
+    <value>java.util.Set</value>
+    <value>java.util.concurrent.atomic.AtomicReference</value>
+    <value>com.spotify.docker.client.DockerClient</value>
+    <value>com.spotify.docker.client.DockerClient.AttachParameter</value>
+    <value>com.spotify.docker.client.DockerClient.BuildParam</value>
+    <value>com.spotify.docker.client.DockerClient.ListContainersParam</value>
+    <value>com.spotify.docker.client.LogStream</value>
+    <value>com.spotify.docker.client.ProgressHandler</value>
+    <value>com.spotify.docker.client.exceptions.DockerCertificateException</value>
+    <value>com.spotify.docker.client.exceptions.DockerException</value>
+    <value>com.spotify.docker.client.messages.ContainerConfig</value>
+    <value>com.spotify.docker.client.messages.ContainerConfig.NetworkingConfig</value>
+    <value>com.spotify.docker.client.messages.HostConfig.Bind</value>
+    <value>com.spotify.docker.client.messages.HostConfig.Builder</value>
+    <value>com.spotify.docker.client.messages.Image</value>
+    <value>com.spotify.docker.client.messages.ImageInfo</value>
+    <value>com.spotify.docker.client.messages.ContainerCreation</value>
+    <value>com.spotify.docker.client.messages.ContainerInfo</value>
+    <value>com.spotify.docker.client.messages.EndpointConfig</value>
+    <value>com.spotify.docker.client.messages.HostConfig</value>
+    <value>com.spotify.docker.client.messages.Network</value>
+    <value>com.spotify.docker.client.messages.NetworkConfig</value>
+    <value>com.spotify.docker.client.messages.NetworkCreation</value>
+    <value>com.spotify.docker.client.messages.PortBinding</value>
+    <value>com.spotify.docker.client.messages.ProgressMessage</value>
+    <value>com.spotify.docker.client.messages.RegistryAuth</value>
+    <value>com.spotify.docker.client.messages.Volume</value>
+    <value>com.spotify.docker.client.messages.VolumeList</value>
+    <value>com.jc.devops.docker.type.ContainerWrapper</value>
+    <value>com.jc.devops.docker.DockerBuilder</value>
+    <value>com.jc.devops.docker.DockerComposeImpl</value>
+    <value>com.jc.devops.docker.DockerConnectionUtil</value>
+    <value>com.jc.devops.docker.ImageRegistry</value>
+    <value>com.jc.devops.docker.WebSocketContainerLogger</value>
+    <value>com.spotify.docker.client.DefaultDockerClient</value>
+    <value>com.spotify.docker.client.DockerCertificates</value>
+    <value>org.eclipse.jgit.api.CloneCommand</value>
+    <value>org.eclipse.jgit.api.errors.GitAPIException</value>
+    <value>org.eclipse.jgit.api.errors.InvalidRemoteException</value>
+    <value>org.eclipse.jgit.api.errors.TransportException</value>
+    <value>org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider</value>
+  </array>
+</Values>

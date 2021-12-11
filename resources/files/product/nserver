@@ -1,0 +1,15 @@
+#!/bin/sh
+ 
+DAEMON_NAME="nserverdaemon"
+SERVER_DAEMON_PATH="/opt/softwareag/UniversalMessaging/server/umserver/bin"
+DAEMON_SH_CMD="/opt/softwareag/common/bin/daemon.sh"
+
+OUT=$($DAEMON_SH_CMD -d $SERVER_DAEMON_PATH -l)
+
+if [[ $OUT == *$DAEMON_NAME* ]];then
+  echo "Daemon installed! Starting daemon."
+  $SERVER_DAEMON_PATH/$DAEMON_NAME start
+else
+  echo "Daemon NOT installed! Starting console."
+  $SERVER_DAEMON_PATH/$DAEMON_NAME console
+fi
