@@ -1,5 +1,5 @@
 .DS_Store
 resources/build/*
 resources/configuration/*
-/JcDevopsConsole/resources/files/properties
-/JcDevopsConsole/resources/files/licenses
+resources/files/properties
+resources/files/licenses
