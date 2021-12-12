@@ -1,5 +1,5 @@
 .DS_Store
-resources/build/*
+resources/builds/*
 resources/configuration/*
 resources/files/properties
 resources/files/licenses
