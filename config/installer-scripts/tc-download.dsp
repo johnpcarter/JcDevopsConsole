@@ -1,9 +1,0 @@
-#Thu Feb 13 12:31:32 UTC 2020
-LicenseAgree=Accept
-Username=%value user%%nl%
-Password=%value password%%nl%
-imageFile=/software/%value imageName%%nl%
-ServerURL=https\://sdc-hq.softwareag.com/cgi-bin/dataservewebM105.cgi
-imagePlatform=LNXAMD64
-TDB.license=__VERSION1__,%2Fshare%2Fkeys%2FInternalKeys_wM_v10.5_exp_2020-10-31%2FTerracotta+DB_v10.5%2F0000490163_Terracotta101.xml
-InstallProducts=e2ei/11/TPL_10.5.0.0.12/License/license,e2ei/11/ACDL_10.5.0.0.175/ACDL/ACDLDeployerSharedBundle,e2ei/11/TDB_10.5.0.0.193/TDB/TDBStore,e2ei/11/TDB_10.5.0.0.193/TDB/TDBCluster,e2ei/11/LIC_5.7.1.0.865/LICRepository/LICRepository,e2ei/11/IS_10.5.0.0.84/integrationServer/integrationServerMigrationFrameworkLib,e2ei/11/TDB_10.5.0.0.193/TDB/TDBLibrariesStore,e2ei/11/TDB_10.5.0.0.193/TDB/TDBLibrariesTctq,e2ei/11/TDB_10.5.0.0.193/TDB/TDBCommon,e2ei/11/TDB_10.5.0.0.193/TDB/TDBOSGIShared,e2ei/11/TPS_10.5.0.0.90/SCG/jsw,e2ei/11/TPS_10.5.0.0.90/Platform/TPS,e2ei/11/LIC_5.7.1.0.865/LICUtil/LICUtil,e2ei/11/TDB_SPM_10.5.0.0.12/TDB/TDBspm,e2ei/11/SJP_1.8.0.0.827/Infrastructure/sjp,e2ei/11/WIS_10.5.0.0.222/Infrastructure/WISSharedBundles,e2ei/11/ZSL_10.5.0.0.145/Platform/ZSLSharedBundles,e2ei/11/TPS_10.5.0.0.90/SCG/log4j,e2ei/11/WIS_10.5.0.0.222/Infrastructure/WISSharedLibs,e2ei/11/TDB_10.5.0.0.193/TDB/TDBLibrariesEhcache,e2ei/11/OSGI_10.5.0.0.444/Platform/OSGI,e2ei/11/TDB_10.5.0.0.193/TDB/TDBServer,e2ei/11/TDB_10.5.0.0.193/TDB/TDBEhcache,e2ei/11/TDB_10.5.0.0.193/TDB/TDBConsole,e2ei/11/TDB_10.5.0.0.193/TDB/TDBtctq,e2ei/11/TPS_10.5.0.0.90/SCG/loggers,e2ei/11/TDB_10.5.0.0.193/TDB/TDBlibrariesTransaction,e2ei/11/TDB_10.5.0.0.193/TDB/TDBOSGICache,e2ei/11/SPM_10.5.0.0.185/Platform/SPM,e2ei/11/LAR_10.5.0.0.249/Platform/LARSharedBundles,e2ei/11/LIC_5.7.1.0.865/LICSharedLibsJava/LICSharedLibsJava,e2ei/11/TDB_10.5.0.0.193/TDB/TDBtransaction,e2ei/11/TDB_10.5.0.0.193/TDB/TDBOSGIStore

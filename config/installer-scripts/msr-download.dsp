@@ -1,8 +1,0 @@
-#Sun Oct 27 14:06:24 CET 2019
-LicenseAgree=Accept
-Username=%value user%%nl%
-Password=%value password%%nl%
-imageFile=/software/%value imageName%%nl%
-ServerURL=https\://sdc-hq.softwareag.com/cgi-bin/dataservewebM105.cgi
-imagePlatform=LNXAMD64
-InstallProducts=e2ei/11/TPL_10.5.0.0.12/License/license,e2ei/11/ACDL_10.5.0.0.175/ACDL/ACDLDeployerSharedBundle,e2ei/11/TPS_10.5.0.0.90/SCG/tppSEC,e2ei/11/TPS_10.5.0.0.90/SCG/tppWS,e2ei/11/DCC_10.5.0.0.174/CDC/DatabaseComponentConfiguratorCore,e2ei/11/TPS_10.5.0.0.90/SCG/tppGfJaxb,e2ei/11/IS_10.5.0.0.84/integrationServer/integrationServerMigrationFrameworkLib,e2ei/11/IS_10.5.0.0.84/CDC/PIEEmbeddedCdc,e2ei/11/NUM_10.5.0.0.123831/UniversalMessaging/NUMSharedLibs,e2ei/11/TPS_10.5.0.0.90/SCG/tppAnt,e2ei/11/LIC_5.7.1.0.865/LICUtil/LICUtil,e2ei/11/IS_10.5.0.0.84/integrationServer/MSC,e2ei/11/WSS_10.5.0.0.337/SCG/WSSCore,e2ei/11/SJP_1.8.0.0.827/Infrastructure/sjp,e2ei/11/IS_10.5.0.0.84/integrationServer/PIECore,e2ei/11/TPS_10.5.0.0.90/SCG/tppServlet,e2ei/11/TPS_10.5.0.0.90/SCG/log4j,e2ei/11/WIS_10.5.0.0.234/Infrastructure/WISSharedLibs,e2ei/11/TPS_10.5.0.0.90/SCG/tppSpring,e2ei/11/TPS_10.5.0.0.90/SCG/tppSwagger,e2ei/11/TES_4.3.8.0.56/TES/TESCommon,e2ei/11/TPS_10.5.0.0.90/SCG/tppCommons,e2ei/11/TPS_10.5.0.0.90/SCG/tppGf,e2ei/11/TPS_10.5.0.0.90/SCG/tppDB,e2ei/11/BR_10.5.0.0.272/Broker/PIFSharedBundles,e2ei/11/TPS_10.5.0.0.90/SCG/tppParsers,e2ei/11/TPS_10.5.0.0.90/SCG/loggers,e2ei/11/TPS_10.5.0.0.90/SCG/tppModelling,e2ei/11/TPS_10.5.0.0.90/SCG/tppMisc,e2ei/11/TPS_10.5.0.0.90/SCG/tppSAML2,e2ei/11/WSC_10.5.0.0.174/SCG/SCGCommon,e2ei/11/LIC_5.7.1.0.865/LICSharedLibsJava/LICSharedLibsJava,e2ei/11/BR_10.5.0.0.272/Broker/BrokerJMSShared

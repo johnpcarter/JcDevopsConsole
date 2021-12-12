@@ -1,9 +1,0 @@
-combooption=Fix Management
-updateConfirm=Y
-action=Install fixes from Empower
-useSSL=N
-selectedFixes=spro:all
-empowerUser=%value user%%nl%
-empowerPwd=%value password%%nl%
-installDir=/opt/softwareag
-createEmpowerImage=N
