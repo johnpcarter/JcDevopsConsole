@@ -5,7 +5,14 @@
   <value name="node_subtype">unknown</value>
   <value name="node_nsName">jc.devops.console.packages_._priv</value>
   <value name="is_public">false</value>
-  <value name="shared"></value>
+  <value name="shared">Cglwcml2YXRlIHN0YXRpYyBNYXA8U3RyaW5nLCBTdHJpbmc+IGNvbnZlcnRUb01hcChJRGF0YVtd
+IGluKSB7CgkJCgkJSGFzaE1hcDxTdHJpbmcsIFN0cmluZz4gbWFwID0gbmV3IEhhc2hNYXA8U3Ry
+aW5nLCBTdHJpbmc+KCk7CgkJCgkJZm9yIChJRGF0YSBpIDogaW4pIHsKCQkJSURhdGFDdXJzb3Ig
+YyA9IGkuZ2V0Q3Vyc29yKCk7CgkJCVN0cmluZyBuYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyhj
+LCAibmFtZSIpOwoJCQlTdHJpbmcgcGF0aCA9IElEYXRhVXRpbC5nZXRTdHJpbmcoYywgInBhdGgi
+KTsKCQkJYy5kZXN0cm95KCk7CgkJCQoJCQlpZiAocGF0aCAhPSBudWxsICYmICFwYXRoLmlzRW1w
+dHkoKSkgewoJCQkJbWFwLnB1dChuYW1lLCBwYXRoKTsKCQkJfSBlbHNlIHsKCQkJCW1hcC5wdXQo
+bmFtZSwgIi4iKTsKCQkJfQoJCX0KCQkKCQlyZXR1cm4gbWFwOwoJCQoJfQ==</value>
   <value name="encodeutf8">true</value>
   <value name="extends"></value>
   <array name="implements" type="value" depth="1">

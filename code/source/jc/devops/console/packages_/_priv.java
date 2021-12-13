@@ -52,15 +52,15 @@ public final class _priv
 	{
 		// --- <<IS-START(getAPIs)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:required packagesDir
+		// [i] field:0:required name
 		// pipeline  in
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
+		String name = IDataUtil.getString(pipelineCursor, "name");
 			
 		// process
 		
-		String[] apis = PackageIntrospector.defaultInstance(packagesDir, false).apiSummary();
+		String[] apis = PackageIntrospector.defaultInstance(name).apiSummary();
 		
 		// pipeline out
 		
@@ -78,28 +78,24 @@ public final class _priv
 	{
 		// --- <<IS-START(getPackageInfo)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:required packagesDir
 		// [i] field:0:required name
+		// [i] field:0:required packageName
 		// [o] recref:0:required package jc.devops.console.packages_.docTypes:PackageInfo
 		// Input
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
-		String packageName = IDataUtil.getString(pipelineCursor, "name");
+		String name = IDataUtil.getString(pipelineCursor, "name");
+		String packageName = IDataUtil.getString(pipelineCursor, "packageName");
 		
 		// process
 		
-		PackageInfo pckg = null;
-		
-		if (packagesDir != null)
-			pckg = PackageIntrospector.defaultInstance(packagesDir, false).packageInfo(packageName);
-		else
-			pckg = PackageIntrospector.defaultInstance(true).packageInfo(packageName);
+		PackageInfo pckg = PackageIntrospector.defaultInstance(name).packageInfo(packageName);
 		
 		// output
 		
 		if (pckg != null)
 			IDataUtil.put(pipelineCursor, "package", pckg.toIData(true, true, null));
+		
 		pipelineCursor.destroy();
 		// --- <<IS-END>> ---
 
@@ -113,21 +109,16 @@ public final class _priv
 	{
 		// --- <<IS-START(getPackages)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:required packagesDir
+		// [i] field:0:required name
 		// [o] recref:1:required packages jc.devops.console.packages_.docTypes:PackageInfo
 		// Input
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
+		String name = IDataUtil.getString(pipelineCursor, "name");
 		
 		// process
 		
-		IData[] pckgs = null;
-		
-		if (packagesDir != null)
-			pckgs = PackageIntrospector.defaultInstance(packagesDir, false).packageDetails();
-		else
-			pckgs = PackageIntrospector.defaultInstance(false).packageDetails();
+		IData[] pckgs = PackageIntrospector.defaultInstance(name).packageDetails();
 		
 		// output
 		
@@ -147,30 +138,26 @@ public final class _priv
 	{
 		// --- <<IS-START(indexPackages)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:required packagesDir
-		// [i] field:0:required repository
+		// [i] field:0:required name
+		// [i] field:0:required sourceDirectory
+		// [i] record:1:required repositories
+		// [i] - field:0:required name
+		// [i] - field:0:required path
 		// [o] recref:1:required packages jc.devops.console.packages_.docTypes:PackageInfo
 		// pipeline  in
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
-		String repo = IDataUtil.getString(pipelineCursor, "repository");
+		String name = IDataUtil.getString(pipelineCursor, "name");
+		String sourceDir = IDataUtil.getString(pipelineCursor, "sourceDirectory");
+		IData[] repos = IDataUtil.getIDataArray(pipelineCursor, "repositories");
 		
 		// process
 		
-		if (packagesDir != null && !packagesDir.startsWith("./") && repo != null) {
-			
-			if (!packagesDir.startsWith("/"))
-				packagesDir = "/" + packagesDir;
-			
-			packagesDir = "./packages/JcDevopsConsole/resources/source/" + repo + packagesDir;
-		}
-		
-		PackageIntrospector p = PackageIntrospector.defaultInstance(packagesDir, true);
+		PackageIntrospector p = PackageIntrospector.defaultInstance(name, sourceDir, convertToMap(repos), true);
 		
 		// output
 		
-		IDataUtil.put(pipelineCursor, "packages", p.allPackages(false));
+		IDataUtil.put(pipelineCursor, "packages", p.allPackages());
 		pipelineCursor.destroy();
 			
 		// --- <<IS-END>> ---
@@ -185,14 +172,17 @@ public final class _priv
 	{
 		// --- <<IS-START(indexedPackages)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:required packagesDir
 		// [o] recref:1:required packages jc.devops.console.packages_.docTypes:PackageInfo
 		// Input
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
+		String name = IDataUtil.getString(pipelineCursor, "name");
 		
-		IData[] packages = PackageIntrospector.defaultInstance(packagesDir, false).allPackages(true);
+		// process
+		
+		IData[] packages = PackageIntrospector.defaultInstance(name).allPackages();
+		
+		// output
 		
 		IDataUtil.put(pipelineCursor, "packages", packages);
 		pipelineCursor.destroy();
@@ -209,14 +199,14 @@ public final class _priv
 	{
 		// --- <<IS-START(isIndexed)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:required packagesDir
+		// [i] field:0:required name
 		// [o] field:0:required isIndexed {"true","false"}
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
+		String name = IDataUtil.getString(pipelineCursor, "name");
 		
 		// process
 		
-		boolean isIndexed = PackageIntrospector.haveInstance(packagesDir);
+		boolean isIndexed = PackageIntrospector.haveInstance(name);
 		
 		// output
 		
@@ -234,19 +224,19 @@ public final class _priv
 	{
 		// --- <<IS-START(packagesDependencies)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:required packagesDir
+		// [i] field:0:required name
 		// [i] field:1:required packageNames
 		// [o] recref:1:required packages jc.devops.console.packages_.docTypes:PackageInfo
 		// [o] recref:1:required dependencies jc.devops.console.packages_.docTypes:PackageInfo
 		// pipeline in
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
+		String name = IDataUtil.getString(pipelineCursor, "name");
 		String[] packageNames = IDataUtil.getStringArray(pipelineCursor, "packageNames");
 			
 		// process
 		
-		PackageIntrospector p = PackageIntrospector.defaultInstance(packagesDir, false);
+		PackageIntrospector p = PackageIntrospector.defaultInstance(name);
 		
 		List<IData> results = p.dependencies(packageNames);
 		
@@ -278,24 +268,19 @@ public final class _priv
 	{
 		// --- <<IS-START(servicesForPackage)>> ---
 		// @sigtype java 3.5
+		// [i] field:0:required name
 		// [i] field:0:optional packagesDir
-		// [i] field:0:required packageName
 		// [o] field:1:required services
 		// pipeline in
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		String packagesDir = IDataUtil.getString(pipelineCursor, "packagesDir");
+		String name = IDataUtil.getString(pipelineCursor, "name");
 		String packageName = IDataUtil.getString(pipelineCursor, "packageName");
 		pipelineCursor.destroy();
 		
-		String[] services = null;
+		String[] services = PackageIntrospector.defaultInstance(name).servicesForPackage(packageName);
 		
-		if (packagesDir != null)
-			services = PackageIntrospector.defaultInstance(packagesDir, false).servicesForPackage(packageName);
-		else
-			services = PackageIntrospector.defaultInstance(false).servicesForPackage(packageName);
-		
-		// pipeline out
+		// pipeline out 
 		
 		IDataUtil.put(pipelineCursor, "services", services);
 		pipelineCursor.destroy();
@@ -305,5 +290,29 @@ public final class _priv
 
                 
 	}
+
+	// --- <<IS-START-SHARED>> ---
+
+	private static Map<String, String> convertToMap(IData[] in) {
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		for (IData i : in) {
+			IDataCursor c = i.getCursor();
+			String name = IDataUtil.getString(c, "name");
+			String path = IDataUtil.getString(c, "path");
+			c.destroy();
+			
+			if (path != null && !path.isEmpty()) {
+				map.put(name, path);
+			} else {
+				map.put(name, ".");
+			}
+		}
+		
+		return map;
+		
+	}
+	// --- <<IS-END-SHARED>> ---
 }
 

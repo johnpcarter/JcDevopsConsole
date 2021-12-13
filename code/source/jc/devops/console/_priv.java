@@ -87,30 +87,30 @@ public final class _priv
 		String user = IDataUtil.getString(cursor, "user");
 		String password = IDataUtil.getString(cursor, "password");
 		
-		String buildDirStr = IDataUtil.getString(cursor, "localDir");
+		String localDirStr = IDataUtil.getString(cursor, "localDir");
 		
 		// process
 		
 		if (repo != null) {
 			if (uri.endsWith("/"))
-				uri += repo;
+				uri += repo + ".git";
 			else
-				uri += "/" + repo;
+				uri += "/" + repo + ".git";
 		}
 		
-		File buildDir = new File(buildDirStr);
+		File localDir = new File(localDirStr);
 		
-		if (!buildDir.exists()) {
-			buildDir.mkdirs();
-		} else if (!buildDir.isDirectory()) {
-			throw new ServiceException("BuildDir must be a directory: " + buildDirStr);
+		if (!localDir.exists()) {
+			localDir.mkdirs();
+		} else if (!localDir.isDirectory()) {
+			throw new ServiceException("BuildDir must be a directory: " + localDirStr);
 		} else {
 			
-			System.out.println("Delete existing directory " + buildDir);
+			System.out.println("Delete existing directory " + localDirStr);
 		
-			deleteDir(buildDir);
+			deleteDir(localDir);
 			
-			buildDir.mkdir();
+			localDir.mkdir();
 		}
 				
 		System.out.println("Cloning from " + uri);
@@ -122,7 +122,7 @@ public final class _priv
 		if (user != null && password != null)
 			c.setCredentialsProvider(new UsernamePasswordCredentialsProvider(user, password));
 		
-		c.setDirectory(buildDir);
+		c.setDirectory(localDir);
 		
 		try {
 			c.call();
