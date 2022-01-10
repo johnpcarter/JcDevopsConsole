@@ -137,38 +137,50 @@ public final class tools
 		// [i] field:0:required sourceDir
 		// [i] record:1:required filesToKeep
 		// [i] - field:0:required source
+		// [i] - field:0:optional fileType
+		// [i] field:0:required pathToPackages
+		// [i] field:0:required pathToConfig
 		// pipeline in
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
 		String sourceDir = IDataUtil.getString(pipelineCursor, "sourceDir");
+		String pathToPackages = IDataUtil.getString(pipelineCursor, "pathToPackages");
+		String pathToConfig = IDataUtil.getString(pipelineCursor, "pathToConfig");
 		IData[]	filesToKeep = IDataUtil.getIDataArray(pipelineCursor, "filesToKeep");
 		
 		// process
 		
 		List<String> files = new ArrayList<String>();
-		
-		files.add(new File(sourceDir, "resources").getPath());
-		files.add(new File(sourceDir, "Dockerfile").getPath());
-		
+			
 		if (filesToKeep != null)
 		{			
 			for ( int i = 0; i < filesToKeep.length; i++ )
 			{
 				IDataCursor filesToKeepCursor = filesToKeep[i].getCursor();
 				String n = IDataUtil.getString(filesToKeepCursor, "source");
+				String t = IDataUtil.getString(filesToKeepCursor, "fileType");
 				
 				if (n != null) {
 					
 					if (n.startsWith("./"))
 						n = n.substring(2);
 					
-					files.add(new File(sourceDir, n).getPath());
+					String fileToKeep;
+					
+					if (t != null && t.equalsIgnoreCase("config")) {
+						fileToKeep = new File(sourceDir, new File(pathToConfig, new File(n).getName()).getPath()).getPath();
+		
+					} else {
+						fileToKeep = new File(sourceDir, new File(pathToPackages, new File(n).getName()).getPath()).getPath();
+					}
+										
+					files.add(fileToKeep);
 				}
 				
 				filesToKeepCursor.destroy();
 			}
 		}
-		
+			
 		deleteFilesInDir(new File(sourceDir), files, true);
 		
 		// pipeline out
@@ -408,11 +420,11 @@ public final class tools
 		
 		String outString = inString;
 		
-		if (inString.startsWith("/")) {
+		if (inString != null && inString.startsWith("/")) {
 			outString = inString.substring(1);
 		}
 		
-		if (outString.endsWith("/")) {
+		if (outString != null && outString.endsWith("/")) {
 			outString = outString.substring(0, outString.length()-2);
 		}
 		
@@ -590,7 +602,7 @@ public final class tools
 	    	}
 	    }
 	    				
-		if (!top && !exclude.contains(element.getPath())) {
+		if (!top && !exclude.contains(element.getPath())) {			
 			element.delete();
 		}
 	}

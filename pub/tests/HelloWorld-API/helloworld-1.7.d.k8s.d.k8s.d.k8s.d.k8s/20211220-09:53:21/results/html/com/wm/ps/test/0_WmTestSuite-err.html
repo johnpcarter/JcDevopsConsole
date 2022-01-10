@@ -1,0 +1,67 @@
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Standard Error from WmTestSuite</title>
+    </head>
+    <body>
+        <pre>com.wm.lang.flow.FlowException:[ISC.0049.9010] Service 'jc.api.helloworld_.services.v1:helloWorld' invoking unknown service 'jc.api.tools_._priv.tools:sleepRandom' at 'Invoke for jc.api.tools_._priv.tools:sleepRandom'. The service may have been renamed, moved or disabled.com.wm.pkg.art.error.DetailedServiceException: [ART.117.4002] Adapter Runtime (Adapter Service): Unable to invoke adapter service jc.api.helloworld_.services.priv.jdbc:insertMessage with connection jc.api.helloworld_.services.priv.jdbc:conn.
+[ART.117.4012] Adapter Runtime (Adapter Service): Unable to run adapter service. Error occurred when connecting to resource jc.api.helloworld_.services.priv.jdbc:conn. 
+[ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:134)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:125)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:117)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:446)
+	at com.wm.pkg.art.ns.ARTNSService.baseInvoke(ARTNSService.java:62)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:759)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:53)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:243)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:49)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:336)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:399)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:629)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:434)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:392)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:260)
+	at com.wm.app.b2b.server.BaseService.invoke(BaseService.java:231)
+	at com.wm.lang.flow.FlowInvoke.invoke(FlowInvoke.java:263)
+	at com.wm.lang.flow.FlowState.invokeNode(FlowState.java:662)
+	at com.wm.lang.flow.FlowState.step(FlowState.java:527)
+	at com.wm.lang.flow.FlowState.invoke(FlowState.java:494)
+	at com.wm.app.b2b.server.FlowSvcImpl.baseInvoke(FlowSvcImpl.java:1147)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:759)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:53)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:243)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:49)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:336)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:399)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:629)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:434)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:392)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:260)
+	at com.wm.app.b2b.server.comm.DefaultServerRequestHandler.handleMessage(DefaultServerRequestHandler.java:119)
+	at com.wm.app.b2b.server.HTTPMessageHandler.process(HTTPMessageHandler.java:156)
+	at com.wm.app.b2b.server.HTTPDispatch.handleRequest(HTTPDispatch.java:218)
+	at com.wm.app.b2b.server.Dispatch.run(Dispatch.java:426)
+	at com.wm.util.pool.PooledThread.run(PooledThread.java:127)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: com.wm.adk.error.AdapterServiceException: [ART.117.4012] Adapter Runtime (Adapter Service): Unable to run adapter service. Error occurred when connecting to resource jc.api.helloworld_.services.priv.jdbc:conn. 
+[ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.adk.error.AdapterException.&lt;init&gt;(AdapterException.java:439)
+	at com.wm.pkg.art.error.DetailedException.&lt;init&gt;(DetailedException.java:99)
+	at com.wm.pkg.art.transaction.ConnectionState.getConnection(ConnectionState.java:230)
+	at com.wm.pkg.art.ns.AdapterServiceNode.getConnection(AdapterServiceNode.java:706)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:359)
+	... 39 more
+Caused by: com.wm.pkg.art.error.DetailedException: [ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.pkg.art.ns.ConnectionResource.createConnection(ConnectionResource.java:386)
+	at com.wm.pkg.art.transaction.ConnectionState.getConnection(ConnectionState.java:204)
+	... 41 more
+</pre>
+    </body>
+</html>

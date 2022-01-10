@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="2" failures="0" hostname="helloworld" id="0" name="WmTestSuite" package="com.wm.ps.test" skipped="0" tests="2" time="0.351" timestamp="2021-12-20T09:51:40">
+      <properties>
+          <property name="webMethods.test.profile.result.location" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results" />
+
+          <property name="ant.library.dir" value="./ant/lib" />
+
+          <property name="webMethods.test.setup.profile.mode" value="COVERAGE" />
+
+          <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
+
+          <property name="test.jars.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/jars" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="11" />
+
+          <property name="ant.project.name" value="BuildTest" />
+
+          <property name="sun.cpu.isalist" value="" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="webMethods.integrationServer.ssl" value="false" />
+
+          <property name="webMethods.projects.location" value="/opt/softwareag/IntegrationServer/packages" />
+
+          <property name="webMethods.test.setup.filename" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/setup/helloWorldTestSuite.xml" />
+
+          <property name="java.class.path" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/commons-jxpath-1.2.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/hamcrest-core.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/httpunit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/junit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/serviceInterceptor.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/serviceMockClient.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars/xmlunit1.0.jar:/opt/softwareag/common/lib/wm-isclient.jar:/opt/softwareag/common/lib/ext/icu4j.jar:/opt/softwareag/common/lib/ext/enttoolkit.jar:/opt/softwareag/IntegrationServer/lib/wm-isserver.jar:/opt/softwareag/common/lib/wm-g11nutils.jar:/opt/softwareag/common/lib/ant/ant-contrib-1.0b3.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/jars/org.glassfish.jakarta.mail_1.6.3.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/jars/org.glassfish.metro.webservices-api-osgi_2.4.3.jar:/opt/softwareag/IntegrationServer/lib/wm-isproxy.jar:/opt/softwareag/IntegrationServer/config/Caching:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-launcher.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-junit.jar:/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/ant/lib/ant-junit4.jar" />
+
+          <property name="webMethods.integrationServer.port" value="5555" />
+
+          <property name="java.vm.vendor" value="Azul Systems, Inc." />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="webMethods.package.name" value="JcHelloWorld" />
+
+          <property name="test.build.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/classes" />
+
+          <property name="webMethods.integrationServer.name" value="localhost" />
+
+          <property name="webMethods.integrationServer.userid" value="Administrator" />
+
+          <property name="java.vendor.url" value="http://www.azul.com/" />
+
+          <property name="user.timezone" value="" />
+
+          <property name="test.source.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/source" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="java.vm.specification.version" value="11" />
+
+          <property name="webMethods.package.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="US" />
+
+          <property name="sun.boot.library.path" value="/opt/softwareag/jvm/jvm/lib" />
+
+          <property name="webMethods.projects.filter" value="Default;JcHelloWorld;JcPublicTools;JcTestRunner;WmART;WmAS400;WmAdmin;WmCloud;WmJDBCAdapter;WmPublic;WmRoot" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.wm.ps.test.WmTestSuite skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results/TEST-JcHelloWorld_helloWorldTestSuite.xml crashfile=/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/junitvmwatcher7188348578661603611.properties propsfile=/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/junit15932460909761295477.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="java.jars.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/jars" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/opt/softwareag" />
+
+          <property name="user.language" value="en" />
+
+          <property name="resource.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2021-07-20" />
+
+          <property name="java.home" value="/opt/softwareag/jvm/jvm" />
+
+          <property name="basedir" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="11" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="jdk.vendor.version" value="Zulu11.50+20-SA" />
+
+          <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+
+          <property name="setup.files.exists" value="false" />
+
+          <property name="webMethods.lib" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/code/jars" />
+
+          <property name="ant.file.BuildTest" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/run-test-suites.xml" />
+
+          <property name="valid.webMethodsTestSuite" value="true" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="11.0.12+7-LTS" />
+
+          <property name="user.name" value="sagadmin" />
+
+          <property name="ant.file" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/run-test-suites.xml" />
+
+          <property name="file.basename" value="helloWorldTestSuite" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="library.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/jars" />
+
+          <property name="os.version" value="5.10.47-linuxkit" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="webMethods.test.setup.external.classpath.layout" value="resources/test/classes,resources/java/classes,resources/test/jars,resources/java/jars,resources/jars," />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="run-test-suite" />
+
+          <property name="java.source.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/source" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="current.project" value="resources" />
+
+          <property name="java.vendor.version" value="Zulu11.50+20-SA" />
+
+          <property name="webMethods.integrationServer.password" value="manage" />
+
+          <property name="test.reports.dir" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/pub/results" />
+
+          <property name="ant.core.lib" value="/opt/softwareag/IntegrationServer/packages/JcTestRunner/resources/./ant/lib/ant.jar" />
+
+          <property name="java.vendor.url.bug" value="http://www.azul.com/support/" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="webMethods.home" value="/opt/softwareag" />
+
+          <property name="build.javac.target" value="1.8" />
+
+          <property name="java.version" value="11.0.12" />
+
+          <property name="java.build.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/java/classes" />
+
+          <property name="user.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+
+          <property name="ant.home" value="./ant" />
+
+          <property name="sun.os.patch.level" value="unknown" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.8 compiled on May 10 2020" />
+
+          <property name="java.library.path" value="/opt/softwareag/jvm/jvm/lib/server:/opt/softwareag/jvm/jvm/lib:/opt/softwareag/jvm/jvm/../lib:/opt/softwareag/IntegrationServer/bin/../../common/lib:/opt/softwareag/IntegrationServer/bin/../../common/bin:/opt/softwareag/IntegrationServer/bin/../lib:/opt/softwareag/IntegrationServer/bin/../lib::/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib" />
+
+          <property name="ant.file.type.BuildTest" value="file" />
+
+          <property name="java.vendor" value="Azul Systems, Inc." />
+
+          <property name="webMethods.package.dir.exists" value="true" />
+
+          <property name="java.vm.info" value="mixed mode" />
+
+          <property name="java.vm.version" value="11.0.12+7-LTS" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="test.xml.dir" value="/opt/softwareag/IntegrationServer/packages/JcHelloWorld/resources/test/setup" />
+
+          <property name="java.class.version" value="55.0" />
+
+          <property name="ant.project.default-target" value="runall-test" />
+
+      </properties>
+
+      <testcase classname="com.wm.ps.test.WmTestCase" name="HelloWorld V1 Tester" time="0.22">
+          <error message="[ISC.0049.9010] Service &apos;jc.api.helloworld_.services.v1:helloWorld&apos; invoking unknown service &apos;jc.api.tools_._priv.tools:sleepRandom&apos; at &apos;Invoke for jc.api.tools_._priv.tools:sleepRandom&apos;. The service may have been renamed, moved or disabled." type="com.wm.app.b2b.client.ServiceException">com.wm.lang.flow.FlowException:[ISC.0049.9010] Service &apos;jc.api.helloworld_.services.v1:helloWorld&apos; invoking unknown service &apos;jc.api.tools_._priv.tools:sleepRandom&apos; at &apos;Invoke for jc.api.tools_._priv.tools:sleepRandom&apos;. The service may have been renamed, moved or disabled.
+</error>
+
+      </testcase>
+
+      <testcase classname="com.wm.ps.test.WmTestCase" name="HelloWorld V2 Tester" time="0.113">
+          <error message="[ART.117.4002] Adapter Runtime (Adapter Service): Unable to invoke adapter service jc.api.helloworld_.services.priv.jdbc:insertMessage with connection jc.api.helloworld_.services.priv.jdbc:conn.&#xa;[ART.117.4012] Adapter Runtime (Adapter Service): Unable to run adapter service. Error occurred when connecting to resource jc.api.helloworld_.services.priv.jdbc:conn. &#xa;[ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available." type="com.wm.app.b2b.client.ServiceException">com.wm.pkg.art.error.DetailedServiceException: [ART.117.4002] Adapter Runtime (Adapter Service): Unable to invoke adapter service jc.api.helloworld_.services.priv.jdbc:insertMessage with connection jc.api.helloworld_.services.priv.jdbc:conn.
+[ART.117.4012] Adapter Runtime (Adapter Service): Unable to run adapter service. Error occurred when connecting to resource jc.api.helloworld_.services.priv.jdbc:conn. 
+[ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:134)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:125)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:117)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:446)
+	at com.wm.pkg.art.ns.ARTNSService.baseInvoke(ARTNSService.java:62)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:759)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:53)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:243)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:49)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:336)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:399)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:629)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:434)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:392)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:260)
+	at com.wm.app.b2b.server.BaseService.invoke(BaseService.java:231)
+	at com.wm.lang.flow.FlowInvoke.invoke(FlowInvoke.java:263)
+	at com.wm.lang.flow.FlowState.invokeNode(FlowState.java:662)
+	at com.wm.lang.flow.FlowState.step(FlowState.java:527)
+	at com.wm.lang.flow.FlowState.invoke(FlowState.java:494)
+	at com.wm.app.b2b.server.FlowSvcImpl.baseInvoke(FlowSvcImpl.java:1147)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:759)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:53)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:243)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:49)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:336)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:399)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:629)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:434)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:392)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:260)
+	at com.wm.app.b2b.server.comm.DefaultServerRequestHandler.handleMessage(DefaultServerRequestHandler.java:119)
+	at com.wm.app.b2b.server.HTTPMessageHandler.process(HTTPMessageHandler.java:156)
+	at com.wm.app.b2b.server.HTTPDispatch.handleRequest(HTTPDispatch.java:218)
+	at com.wm.app.b2b.server.Dispatch.run(Dispatch.java:426)
+	at com.wm.util.pool.PooledThread.run(PooledThread.java:127)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: com.wm.adk.error.AdapterServiceException: [ART.117.4012] Adapter Runtime (Adapter Service): Unable to run adapter service. Error occurred when connecting to resource jc.api.helloworld_.services.priv.jdbc:conn. 
+[ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.adk.error.AdapterException.&lt;init&gt;(AdapterException.java:439)
+	at com.wm.pkg.art.error.DetailedException.&lt;init&gt;(DetailedException.java:99)
+	at com.wm.pkg.art.transaction.ConnectionState.getConnection(ConnectionState.java:230)
+	at com.wm.pkg.art.ns.AdapterServiceNode.getConnection(AdapterServiceNode.java:706)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:359)
+Caused by: com.wm.pkg.art.error.DetailedException: [ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.pkg.art.ns.ConnectionResource.createConnection(ConnectionResource.java:386)
+	at com.wm.pkg.art.transaction.ConnectionState.getConnection(ConnectionState.java:204)
+</error>
+
+      </testcase>
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[com.wm.lang.flow.FlowException:[ISC.0049.9010] Service 'jc.api.helloworld_.services.v1:helloWorld' invoking unknown service 'jc.api.tools_._priv.tools:sleepRandom' at 'Invoke for jc.api.tools_._priv.tools:sleepRandom'. The service may have been renamed, moved or disabled.com.wm.pkg.art.error.DetailedServiceException: [ART.117.4002] Adapter Runtime (Adapter Service): Unable to invoke adapter service jc.api.helloworld_.services.priv.jdbc:insertMessage with connection jc.api.helloworld_.services.priv.jdbc:conn.
+[ART.117.4012] Adapter Runtime (Adapter Service): Unable to run adapter service. Error occurred when connecting to resource jc.api.helloworld_.services.priv.jdbc:conn. 
+[ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:134)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:125)
+	at com.wm.pkg.art.error.DetailedServiceException.create(DetailedServiceException.java:117)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:446)
+	at com.wm.pkg.art.ns.ARTNSService.baseInvoke(ARTNSService.java:62)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:759)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:53)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:243)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:49)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:336)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:399)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:629)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:434)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:392)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:260)
+	at com.wm.app.b2b.server.BaseService.invoke(BaseService.java:231)
+	at com.wm.lang.flow.FlowInvoke.invoke(FlowInvoke.java:263)
+	at com.wm.lang.flow.FlowState.invokeNode(FlowState.java:662)
+	at com.wm.lang.flow.FlowState.step(FlowState.java:527)
+	at com.wm.lang.flow.FlowState.invoke(FlowState.java:494)
+	at com.wm.app.b2b.server.FlowSvcImpl.baseInvoke(FlowSvcImpl.java:1147)
+	at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:759)
+	at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+	at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:53)
+	at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:243)
+	at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:49)
+	at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+	at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:336)
+	at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+	at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java:399)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:629)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:434)
+	at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:392)
+	at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:260)
+	at com.wm.app.b2b.server.comm.DefaultServerRequestHandler.handleMessage(DefaultServerRequestHandler.java:119)
+	at com.wm.app.b2b.server.HTTPMessageHandler.process(HTTPMessageHandler.java:156)
+	at com.wm.app.b2b.server.HTTPDispatch.handleRequest(HTTPDispatch.java:218)
+	at com.wm.app.b2b.server.Dispatch.run(Dispatch.java:426)
+	at com.wm.util.pool.PooledThread.run(PooledThread.java:127)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: com.wm.adk.error.AdapterServiceException: [ART.117.4012] Adapter Runtime (Adapter Service): Unable to run adapter service. Error occurred when connecting to resource jc.api.helloworld_.services.priv.jdbc:conn. 
+[ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.adk.error.AdapterException.<init>(AdapterException.java:439)
+	at com.wm.pkg.art.error.DetailedException.<init>(DetailedException.java:99)
+	at com.wm.pkg.art.transaction.ConnectionState.getConnection(ConnectionState.java:230)
+	at com.wm.pkg.art.ns.AdapterServiceNode.getConnection(AdapterServiceNode.java:706)
+	at com.wm.pkg.art.ns.AdapterServiceNode.invokeService(AdapterServiceNode.java:359)
+	... 39 more
+Caused by: com.wm.pkg.art.error.DetailedException: [ART.118.5046] Adapter Runtime (Connection): Unable to get a connection to resource jc.api.helloworld_.services.priv.jdbc:conn. Resource not available.
+	at com.wm.pkg.art.ns.ConnectionResource.createConnection(ConnectionResource.java:386)
+	at com.wm.pkg.art.transaction.ConnectionState.getConnection(ConnectionState.java:204)
+	... 41 more
+]]></system-err>
+
+  </testsuite>
+</testsuites>

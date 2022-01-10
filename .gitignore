@@ -3,3 +3,4 @@ resources/builds/*
 resources/configuration/*
 resources/files/properties
 resources/files/licenses
+*.xml.bak
