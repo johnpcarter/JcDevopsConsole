@@ -47,12 +47,12 @@
       },
       {
         "source": "JAVA_MIN_MEM",
-        "target": "256mb",
+        "target": "256m",
         "description": "Configure minimum heap size for runtime"
       },
       {
           "source": "JAVA_MAX_MEM",
-          "target": "1024mb",
+          "target": "1024m",
           "description": "Configure maximum heap size for runtime"
       },
       {

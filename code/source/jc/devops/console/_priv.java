@@ -325,14 +325,10 @@ public final class _priv
 	private static Git commitLocalRepo(File dir, String[] files, String message, boolean remove) throws GitAPIException, IOException {
 		
 		Git git =  null;
-		
-		System.out.print("wotcha");
-	
+			
 		if  (new File(".", ".git").exists()) {
 			// submodule
-	
-			System.out.print("bodger");
-	
+		
 			SubmoduleWalk walk = SubmoduleWalk.forIndex(Git.open(new File(".", ".git")).getRepository());
 			
 			while( walk.next() ) {

@@ -106,7 +106,8 @@ public final class dapi
 		// process
 				
 		try {
-			WebSocketContainerLogger.defaultInstance(sessionId).attachContainerOutput(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert), containerId);
+			WebSocketContainerLogger.defaultInstance(sessionId)
+				.attachContainerOutput(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert), containerId, 1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServiceException(e);

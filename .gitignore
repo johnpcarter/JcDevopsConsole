@@ -3,4 +3,8 @@ resources/builds/*
 resources/configuration/*
 resources/files/properties
 resources/files/licenses
+resources/files/other
+resources/files/install
+resources/files/installer-images
+resources/source
 *.xml.bak
