@@ -22,31 +22,6 @@
       <value name="idleTimeout">300000</value>
       <value name="clientAuth">basic</value>
     </record>
-    <record name="HTTPListener@9090" javaclass="com.wm.util.Values">
-      <number name="port" type="Integer">9090</number>
-      <value name="protocol">HTTP</value>
-      <value name="pkg">JcDevopsConsole</value>
-      <value name="enabled">false</value>
-      <value name="key">HTTPListener@9090</value>
-      <value name="uniqueID">3950f09d4f374a7c9d6d199b84e196d0</value>
-      <value name="portAlias">devops</value>
-      <value name="portDescription">Integration Server HTTP port: 9090</value>
-      <value name="factoryKey">webMethods/HTTP</value>
-      <value name="configURL">/WmRoot/configHTTP.dsp</value>
-      <value name="provider">webMethods</value>
-      <value name="listenerType">Regular</value>
-      <value name="clientAuth">none</value>
-      <value name="idProvider">salesforce.com</value>
-      <value name="ssl">false</value>
-      <value name="maxQueue">200</value>
-      <value name="keepAliveTimeout">20000</value>
-      <value name="internalPort">-1</value>
-      <value name="curDelay">0</value>
-      <value name="stepsize">10000</value>
-      <value name="suspended">false</value>
-      <null name="jsseDisabledProtocols"/>
-      <null name="jsseEnabledProtocols"/>
-    </record>
   </record>
   <record name="access" javaclass="com.wm.util.Values">
     <record name="WebSocketListener@9191" javaclass="com.wm.util.Values">
@@ -57,15 +32,6 @@
         </list>
       </record>
       <value name="key">WebSocketListener@9191</value>
-    </record>
-    <record name="HTTPListener@9090" javaclass="com.wm.util.Values">
-      <null name="home"/>
-      <value name="default">include</value>
-      <record name="nodes" javaclass="com.wm.util.StringSet">
-        <list name="elements">
-        </list>
-      </record>
-      <value name="key">HTTPListener@9090</value>
     </record>
   </record>
 </Values>
