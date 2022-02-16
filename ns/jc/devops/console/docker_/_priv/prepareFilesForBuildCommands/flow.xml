@@ -5359,6 +5359,10 @@
   <COMMENT>Nothing to do, file already in place, thanks to git</COMMENT>
 </MAP>
 
+<MAP NAME="git" TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>Nothing to do, file already in place, thanks to git</COMMENT>
+</MAP>
+
 <SEQUENCE NAME="$default" TIMEOUT="" EXIT-ON="DONE">
   <COMMENT>copy by default, but if it fails, assume already in resources dir</COMMENT>
 

@@ -6425,7 +6425,7 @@ while [ "$1" != "" ]; do
 	shift
 done
 
-if [ "x${target}" == "x" ]
+if [ "x${target}" = "x" ]
 then
 	target=%toImage%
 fi
