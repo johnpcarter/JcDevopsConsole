@@ -129,6 +129,7 @@ public final class _priv
 		// [i] field:0:required appPrefix
 		// [i] field:0:required environment
 		// [i] recref:0:required run jc.devops.console.configuration_.docTypes:Run
+		// [i] field:0:required dirForPropertiesFiles
 		// [o] recref:0:required run jc.devops.console.configuration_.docTypes:Run
 		// [o] object:0:required requiresBuild
 		// pipeline in
@@ -137,6 +138,7 @@ public final class _priv
 		String buildDir = IDataUtil.getString(c, "buildDir");
 		String appPrefix = IDataUtil.getString(c, "appPrefix");
 		String environment = IDataUtil.getString(c, "environment");
+		String dirForPropertiesFiles = IDataUtil.getString(c, "dirForPropertiesFiles");
 		
 		IData run = IDataUtil.getIData(c, "run");
 		
@@ -151,7 +153,7 @@ public final class _priv
 		
 		try {
 			IData[] updatedDeploymentsIData = new IData[deploymentsIData.length];
-			Deployment[] deployments = deployments(deploymentsIData);
+			Deployment[] deployments = deployments(deploymentsIData, dirForPropertiesFiles);
 			Build[] builds =  builds(buildsIData);
 			
 			int i = 0;
@@ -194,12 +196,12 @@ public final class _priv
 		return out;
 	}
 		
-	public static Deployment[] deployments(IData[] deployments) {
+	public static Deployment[] deployments(IData[] deployments, String dirForPropertiesFiles) {
 		
 		Deployment[] out = new Deployment[deployments.length];
 		
 		for (int i = 0; i < deployments.length; i++) {
-			out[i] = new Deployment(deployments[i]);
+			out[i] = new Deployment(deployments[i], dirForPropertiesFiles);
 		}
 		
 		return out;

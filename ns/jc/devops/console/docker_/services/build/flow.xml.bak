@@ -3699,7 +3699,7 @@
 
   <!-- nodes -->
 
-<INVOKE NAME="%BuildImage/build/deploymentType% == &#39;msc&#39;" TIMEOUT="" SERVICE="jc.devops.console.docker_._priv:prepareDockerVariableForMicroServiceRuntime" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE NAME="%BuildImage/build/deploymentType% == &#39;msc&#39;" TIMEOUT="" SERVICE="jc.devops.console.docker_._priv:preparePackageBuildCommands" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
