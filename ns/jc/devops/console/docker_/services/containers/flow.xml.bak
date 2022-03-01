@@ -402,6 +402,9 @@
 
 <MAPDELETE FIELD="/dockerHost;1;0">
 </MAPDELETE>
+
+<MAPDELETE FIELD="/User;4;0;jc.devops.console.configuration_.docTypes:User">
+</MAPDELETE>
 </MAP>
 </INVOKE>
 </FLOW>

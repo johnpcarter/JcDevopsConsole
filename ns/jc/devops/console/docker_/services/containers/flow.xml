@@ -271,6 +271,9 @@
 
 <MAPCOPY FROM="/User;4;0;jc.devops.console.configuration_.docTypes:User/dockerHost;1;0" TO="/dockerHost;1;0">
 </MAPCOPY>
+
+<MAPCOPY FROM="/User;4;0;jc.devops.console.configuration_.docTypes:User/dockerCertificate;1;0" TO="/httpsCert;1;0">
+</MAPCOPY>
 </MAP>
 
 <MAP MODE="OUTPUT">

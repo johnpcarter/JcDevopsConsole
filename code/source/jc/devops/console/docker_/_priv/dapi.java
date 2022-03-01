@@ -508,6 +508,8 @@ public final class dapi
 		try {
 			if (email != null)
 				new ImageRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert), email, user, password).push(tag);
+			else if (user != null)
+				new ImageRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert), user, password).push(tag);
 			else 
 				new ImageRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert)).push(tag);
 		
@@ -546,9 +548,7 @@ public final class dapi
 		// [i] field:0:optional containers
 		// [i] field:0:optional dockerHost
 		// [i] field:0:optional httpsCert
-		// [i] field:0:optional dockerEmail
-		// [i] field:0:optional dockerUser
-		// [i] field:0:optional dockerPassword
+		// [i] field:0:required dirForPropertyFiles
 		// pipeline in
 		
 		IDataCursor c = pipeline.getCursor();
@@ -563,9 +563,7 @@ public final class dapi
 		String dockerHost = IDataUtil.getString(c, "dockerHost");
 		String httpsCert = IDataUtil.getString(c, "httpsCert");
 		
-		String registryEmail = IDataUtil.getString(c, "dockerEmail");
-		String registryUser = IDataUtil.getString(c, "dockerUser");
-		String registryPassword = IDataUtil.getString(c, "dockerPassword");
+		String dirForProperties = IDataUtil.getString(c, "dirForPropertyFiles");
 		
 		// process 
 				
@@ -576,16 +574,7 @@ public final class dapi
 			httpsCert = null;
 		
 		try {
-			ImageRegistry.setDefaultRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert), registryEmail, registryUser, registryPassword);
-						
-		} catch (Exception e) {
-			e.printStackTrace();
-			ServerAPI.logError(e);
-			WebSocketContainerLogger.log(e.getLocalizedMessage());
-		}
-		
-		try {
-			DockerComposeImpl dk = new DockerComposeImpl(dockerHost, httpsCert, compose, stageName);
+			DockerComposeImpl dk = new DockerComposeImpl(dockerHost, httpsCert, compose, stageName, dirForProperties);
 			dk.run(buildno, containers, environment);
 			_comps.put(dk.name, dk);
 		

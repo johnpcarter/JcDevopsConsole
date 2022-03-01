@@ -1627,6 +1627,11 @@
 </MAPSET>
 </MAP>
 
+<SEQUENCE TIMEOUT="" EXIT-ON="DONE">
+  <COMMENT>hide errors</COMMENT>
+
+  <!-- nodes -->
+
 <INVOKE TIMEOUT="" SERVICE="pub.client:http" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT>list summary</COMMENT>
 
@@ -2868,6 +2873,7 @@
 </MAPDELETE>
 </MAP>
 </INVOKE>
+</SEQUENCE>
 
 <BRANCH TIMEOUT="" SWITCH="/header/status">
   <COMMENT></COMMENT>

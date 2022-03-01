@@ -96,7 +96,7 @@ public final class _priv
 		if (label != null)
 			filename = label.replace(" ", "-");
 		
-		if (type.equalsIgnoreCase("install") || type.equalsIgnoreCase("deployments") || type.equalsIgnoreCase("builds") || type.equalsIgnoreCase("runs") || type.equalsIgnoreCase("projects")) {
+		if (type.equalsIgnoreCase("install") || type.equalsIgnoreCase("deployments") || type.equalsIgnoreCase("builds") || type.equalsIgnoreCase("runs") || type.equalsIgnoreCase("projects") || type.equalsIgnoreCase("registries")) {
 			group = "configuration";
 		
 			if (label != null)

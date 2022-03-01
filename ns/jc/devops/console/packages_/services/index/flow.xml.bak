@@ -5737,5 +5737,17 @@
 
 <MAPDELETE FIELD="/sourceDirectory;1;0">
 </MAPDELETE>
+
+<MAPDELETE FIELD="/User;4;0;jc.devops.console.configuration_.docTypes:User">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/reps;2;1">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/files;1;1">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/pathForPackages;1;0">
+</MAPDELETE>
 </MAP>
 </FLOW>
