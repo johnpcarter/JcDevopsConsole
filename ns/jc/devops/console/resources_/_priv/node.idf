@@ -5,12 +5,26 @@
   <value name="node_subtype">unknown</value>
   <value name="node_nsName">jc.devops.console.resources_._priv</value>
   <value name="is_public">false</value>
-  <value name="shared"></value>
+  <value name="shared">CnB1YmxpYyBzdGF0aWMgSURhdGEgbWFrZUJ1aWxkQ29tbWFuZChTdHJpbmcgY29tbWFuZFR5cGUs
+IFN0cmluZyBvcHRpb25zLCBTdHJpbmcgc291cmNlLCBTdHJpbmcgZmlsZVR5cGUsIFN0cmluZyB0
+YXJnZXQpIHsKCglJRGF0YSBiID0gSURhdGFGYWN0b3J5LmNyZWF0ZSgpOwoJSURhdGFDdXJzb3Ig
+YmMgPSBiLmdldEN1cnNvcigpOwoJSURhdGFVdGlsLnB1dChiYywgImNvbW1hbmRUeXBlIiwgY29t
+bWFuZFR5cGUpOwoJCglpZiAob3B0aW9ucyAhPSBudWxsKQoJCUlEYXRhVXRpbC5wdXQoYmMsICJv
+cHRpb25zIiwgb3B0aW9ucyk7CgoJaWYgKGZpbGVUeXBlICE9IG51bGwpIAoJCUlEYXRhVXRpbC5w
+dXQoYmMsICJmaWxlVHlwZSIsIGZpbGVUeXBlKTsKCglJRGF0YVV0aWwucHV0KGJjLCAic291cmNl
+Iiwgc291cmNlKTsKCQoJaWYgKHRhcmdldCAhPSBudWxsKQoJCUlEYXRhVXRpbC5wdXQoYmMsICJ0
+YXJnZXQiLCB0YXJnZXQpOwoJCgliYy5kZXN0cm95KCk7CgkKCXJldHVybiBiOwp9Cgk=</value>
   <value name="encodeutf8">true</value>
   <value name="extends"></value>
   <array name="implements" type="value" depth="1">
   </array>
   <array name="imports" type="value" depth="1">
+    <value>com.ibm.icu.util.StringTokenizer</value>
+    <value>java.io.BufferedReader</value>
+    <value>java.io.File</value>
+    <value>java.io.FileNotFoundException</value>
+    <value>java.io.FileReader</value>
+    <value>java.io.IOException</value>
     <value>java.util.ArrayList</value>
     <value>java.util.List</value>
   </array>

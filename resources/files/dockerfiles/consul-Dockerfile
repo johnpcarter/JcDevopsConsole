@@ -1,0 +1,31 @@
+FROM softwareag/microgateway-trial:10.11
+
+LABEL MAINTAINER="John Carter (john.carter@softwareag.com)" \
+DESCRIPTION="Micro Gateway with secret sauce" \
+COMMENT="Interogates companion MSR to dynamically figure out what API's to manage" \
+CUSTOM="false" \
+SAG="true" \
+TYPE="apimg" \
+PRIMARY_PORT="4485" \
+BUILD="112"
+
+USER root
+
+RUN apk add curl
+
+EXPOSE 4485
+
+#USER sagadmin
+
+COPY docker-init.sh /
+COPY docker-stop.sh /
+COPY docker-health-check.sh /
+
+COPY config/system-settings.yml /opt/sag/Microgateway/config/system-settings.yml
+COPY config/config.yml /opt/sag/Microgateway/config/config.yml
+#COPY --chown=sagadmin:sagadmin config/users.cnf /opt/sag/Microgateway/config/users.cnf
+
+ENTRYPOINT ["/docker-init.sh"]
+
+HEALTHCHECK --interval=30s --timeout=30s --start-period=20s --retries=6 \
+	CMD /docker-health-check.sh

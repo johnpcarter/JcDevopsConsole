@@ -7,6 +7,12 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.ibm.icu.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 // --- <<IS-END-IMPORTS>> ---
@@ -156,5 +162,112 @@ public final class _priv
 
                 
 	}
+
+
+
+	public static final void readDockerfile (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(readDockerfile)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required pathForDockerfile
+		// [o] field:0:required imageName
+		// [o] record:1:optional buildCommands
+		// [o] - field:0:required commandType
+		// [o] - field:0:optional options
+		// [o] - field:0:optional fileType
+		// [o] - field:0:required source
+		// [o] - field:0:optional target
+		// pipeline in
+		
+		IDataCursor pipelineCursor = pipeline.getCursor();
+		String pathForDockerfile = IDataUtil.getString(pipelineCursor, "pathForDockerfile");
+		
+		// process
+		String imageName = null;
+		ArrayList<IData> buildCommands = new ArrayList<IData>();
+		
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(new File(pathForDockerfile)));
+			String line = null;
+			while ((line=reader.readLine()) != null) {
+				if (!line.startsWith("#")) {
+					if (line.startsWith("FROM") || line.startsWith("from")) {
+						int spacer = line.indexOf(" ");
+						
+						if (spacer != -1)
+							imageName = line.substring(spacer+1);					
+					} else if (line.startsWith("COPY") || line.startsWith("copy") || 
+							line.startsWith("ADD") || line.startsWith("ADD")) {
+						
+						StringTokenizer t = new StringTokenizer(line, " ");
+						
+						String commandType = t.nextToken().toLowerCase();
+						String src = t.nextToken();
+						String options =null;
+						if (src.startsWith("--chown")) {
+							options = src;
+							src = t.nextToken();
+						}
+						
+						String target = t.nextToken();
+						
+						buildCommands.add(makeBuildCommand(commandType, options, src, "resource", target));
+					} else if (line.startsWith("run") || line.startsWith("RUN") 
+							|| line.startsWith("ENTRYPOINT") || line.startsWith("entrypoint")) {
+						
+						int index = line.indexOf(" ");
+						String type = line.substring(0, index).toLowerCase();
+						String cmd = line.substring(index+1);
+						
+						buildCommands.add(makeBuildCommand(type, null, null, null, cmd));
+					} else if (line.startsWith("HEALTHCHECK") || line.startsWith("healthcheck")) {
+					
+						// TODO
+					}
+				}
+			}
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		// pipeline out
+		
+		IDataUtil.put(pipelineCursor, "imageName", imageName);
+		IDataUtil.put(pipelineCursor, "buildCommands", buildCommands.toArray(new IData[buildCommands.size()]));
+		pipelineCursor.destroy();
+		// --- <<IS-END>> ---
+
+                
+	}
+
+	// --- <<IS-START-SHARED>> ---
+	
+	public static IData makeBuildCommand(String commandType, String options, String source, String fileType, String target) {
+	
+		IData b = IDataFactory.create();
+		IDataCursor bc = b.getCursor();
+		IDataUtil.put(bc, "commandType", commandType);
+		
+		if (options != null)
+			IDataUtil.put(bc, "options", options);
+	
+		if (fileType != null) 
+			IDataUtil.put(bc, "fileType", fileType);
+	
+		IDataUtil.put(bc, "source", source);
+		
+		if (target != null)
+			IDataUtil.put(bc, "target", target);
+		
+		bc.destroy();
+		
+		return b;
+	}
+		
+	// --- <<IS-END-SHARED>> ---
 }
 

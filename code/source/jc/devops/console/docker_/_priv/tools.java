@@ -482,6 +482,49 @@ public final class tools
 
 
 
+	public static final void separateFilenameAndPath (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(separateFilenameAndPath)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required baseDir
+		// [i] field:0:required filename
+		// [o] field:0:required path
+		// [o] field:0:required name
+		// pipeline in 
+		
+		IDataCursor pipelineCursor = pipeline.getCursor();
+		String baseDir = IDataUtil.getString(pipelineCursor, "baseDir");
+		String filename = IDataUtil.getString(pipelineCursor, "filename");
+		
+		// processs
+		
+		String separator = System.getProperty("file.separator");
+		String srcDir = baseDir;
+		
+		if (srcDir == null) {
+			srcDir = "./";
+		}
+		
+		if (filename != null && filename.contains(separator)) {
+			File f = new File(filename);
+			srcDir = new File(srcDir, f.getParent()).getPath();
+			filename = f.getName();
+		}
+		
+		// pipeline out
+		
+		IDataUtil.put(pipelineCursor, "path", srcDir);
+		IDataUtil.put(pipelineCursor, "name", filename);
+		pipelineCursor.destroy();
+			
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
 	public static final void updateVersionInAPIList (IData pipeline)
         throws ServiceException
 	{
