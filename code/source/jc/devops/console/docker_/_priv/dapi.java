@@ -485,7 +485,6 @@ public final class dapi
 		// [i] field:0:optional dockerEmail
 		// [i] field:0:optional dockerUser
 		// [i] field:0:optional dockerPassword
-		// [o] record:0:required image
 		// pipeline in 
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
@@ -499,13 +498,9 @@ public final class dapi
 				
 		// process
 		
-		IData image = null;
-		
 		if (tag.indexOf("/") == -1) {
 			
-			// no remote repository has been specified, don't do anything
-			
-			return;
+			throw new ServiceException("Image name does not reference repository! - " + tag);
 		}
 		
 		try {
@@ -520,7 +515,6 @@ public final class dapi
 			throw new ServiceException(e);
 		}
 		
-		IDataUtil.put(pipelineCursor, "image", image);
 		pipelineCursor.destroy();
 			
 		// --- <<IS-END>> ---

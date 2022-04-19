@@ -12562,7 +12562,7 @@ fi</value>
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">name</value>
+        <value name="field_name">tag</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <array name="field_options" type="value" depth="1">
@@ -13265,7 +13265,7 @@ fi</value>
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/toImage;1;0" TO="/name;1;0">
+<MAPCOPY FROM="/toImage;1;0" TO="/tag;1;0">
 </MAPCOPY>
 </MAP>
 </INVOKE>

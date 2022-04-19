@@ -2772,7 +2772,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">name</value>
+        <value name="field_name">tag</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <array name="field_options" type="value" depth="1">
@@ -3110,7 +3110,7 @@
 <MAPCOPY FROM="/run(0);4;0;jc.devops.console.configuration_.docTypes:Run/type;1;0" TO="/type;1;0">
 </MAPCOPY>
 
-<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/name;1;0">
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/tag;1;0">
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
@@ -3125,7 +3125,7 @@
       <value name="field_password">false</value>
     </record>
     <value name="is_public">false</value>
-    <value name="field_name">name</value>
+    <value name="field_name">tag</value>
     <value name="field_type">string</value>
     <value name="field_dim">0</value>
     <array name="field_options" type="value" depth="1">
@@ -12037,7 +12037,7 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">name</value>
+        <value name="field_name">tag</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -12723,7 +12723,7 @@
 <MAPDELETE FIELD="/fromList;2;1">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/name;1;0">
+<MAPDELETE FIELD="/tag;1;0">
 </MAPDELETE>
 
 <MAPDELETE FIELD="/serviceName;1;0">
