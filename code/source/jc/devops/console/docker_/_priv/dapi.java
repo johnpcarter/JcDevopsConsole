@@ -384,10 +384,13 @@ public final class dapi
 				}
 			}
 		}
-				
-		List<IData> images;
+		
+		System.out.println("filtering on " + filter);
+		
+		List<IData> images = null;
+		
 		try {
-			images = new ImageRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert)).images(filter, true);
+			images = new ImageRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert)).images(filter, filter == null);
 		} catch (DockerCertificateException e) {
 			throw new ServiceException(e);
 		}
