@@ -387,7 +387,7 @@ public final class dapi
 				
 		List<IData> images;
 		try {
-			images = new ImageRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert)).images(filter, filter == null);
+			images = new ImageRegistry(DockerConnectionUtil.createDockerClient(dockerHost, httpsCert)).images(filter, true);
 		} catch (DockerCertificateException e) {
 			throw new ServiceException(e);
 		}

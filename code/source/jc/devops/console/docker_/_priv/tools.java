@@ -242,11 +242,10 @@ public final class tools
 	{
 		// --- <<IS-START(getNextVersionForImage)>> ---
 		// @sigtype java 3.5
-		// [i] recref:1:required images jc.devops.console.docker_.docTypes:DockerImage
+		// [i] field:0:required tag
+		// [i] object:0:optional isDedicatedRepo
 		// [i] field:0:required buildType
-		// [i] field:0:required repo
-		// [i] field:0:required imageName
-		// [i] object:0:required increment
+		// [i] recref:1:required images jc.devops.console.docker_.docTypes:DockerImage
 		// [o] field:0:required version
 		// [o] field:0:required tag
 		// [o] field:0:required tagLatest
@@ -254,72 +253,111 @@ public final class tools
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
 		String buildType = IDataUtil.getString(pipelineCursor, "buildType");
-		String repo = IDataUtil.getString(pipelineCursor, "repo");
-		String name = IDataUtil.getString(pipelineCursor, "imageName");
+		String tag = IDataUtil.getString(pipelineCursor, "tag");
+		boolean isDedicatedRepo = IDataUtil.getBoolean(pipelineCursor, "isDedicatedRepo");
 		
 		try {
-			
-		if (repo != null && repo.equals(name)) {
-			// don't have a repo
-			repo = null;
-		}
-			
-		boolean inc = IDataUtil.getBoolean(pipelineCursor, "increment");
-		IData[]	images = IDataUtil.getIDataArray(pipelineCursor, "images");
-			
-		String latest = null;
-		
-		for ( int i = 0; i < images.length; i++ )
-		{
-			IDataCursor imagesCursor = images[i].getCursor();
-			String id = IDataUtil.getString(imagesCursor, "id");
-			String _version = IDataUtil.getString(imagesCursor, "_version");
-			imagesCursor.destroy();
-			
-			if (_version != "latest" && (i == 0 || latest == null)) {
-				latest = _version;
-			}
-		}
-		
-		System.out.println("wot '" + latest + "', inc " + inc);
-		
-		if (latest != null) {
-			if (inc)
-				latest = incrementVersion(latest, buildType);
-		} else {
-			latest = "0.0.1";
-		}
-		
-		String tag = null;
-		String tagLatest = null;
-		
-		if (repo == null) {
-			
-			tag = name + ":" + latest;
-			tagLatest = name + ":latest";
-		} else if (repo.endsWith(name)){
-			
-			// name already included in repo
-									
-			tag = repo + ":" + latest;
-			tagLatest = repo + ":latest";
-		
-		} else {
+					
+			IData[]	images = IDataUtil.getIDataArray(pipelineCursor, "images");
+					
+			String latest = null;
 				
-			tag = repo + ":" + name + "-" + latest;
-			tagLatest = repo + ":" + name + "-latest";
+			for ( int i = 0; i < images.length; i++ )
+			{
+				IDataCursor imagesCursor = images[i].getCursor();
+				String id = IDataUtil.getString(imagesCursor, "id");
+				String _version = IDataUtil.getString(imagesCursor, "_version");
+				imagesCursor.destroy();
+					
+				if (_version != "latest" && (i == 0 || latest == null)) {
+					latest = _version;
+				}
+			}
+								
+			if (latest != null) {
+				latest = incrementVersion(latest, buildType);
+			} else {
+				latest = "0.0.1";
+			}
+				
+			String tagWithoutVersion = "";
+			int index = -1;
+			
+			if (isDedicatedRepo) {
+				index = tag.lastIndexOf(":");
+			} else {
+				index = tag.lastIndexOf("-");
+			}
+			
+			tagWithoutVersion = tag.substring(0, index);
+			
+				
+			// pipeline out
+				
+			if (isDedicatedRepo) {
+				IDataUtil.put(pipelineCursor, "tag", tagWithoutVersion + ":" + latest);
+				IDataUtil.put(pipelineCursor, "tagLatest", tagWithoutVersion + ":latest");
+			} else {
+				IDataUtil.put(pipelineCursor, "tag", tagWithoutVersion + "-" + latest);
+				IDataUtil.put(pipelineCursor, "tagLatest", tagWithoutVersion + "-latest");
+			}
+		
+				
+			IDataUtil.put(pipelineCursor, "version", latest);
+			} catch(Exception e) {
+				e.printStackTrace();
+				throw new ServiceException(e);
+			}
+		
+		pipelineCursor.destroy();
+			
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
+	public static final void getNextVersionFromImage (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(getNextVersionFromImage)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required tag
+		// [i] object:0:optional isDedicatedRepo
+		// [o] field:0:required version
+		// [o] field:0:required tagLatest
+		// pipeline in
+		
+		IDataCursor pipelineCursor = pipeline.getCursor();
+		String tag = IDataUtil.getString(pipelineCursor, "tag");
+		boolean isDedicatedRepo = IDataUtil.getBoolean(pipelineCursor, "isDedicatedRepo");
+		
+		// process
+		
+		String version = "1.0";
+		String tagWithoutVersion = "";
+		int index = -1;
+		
+		if (isDedicatedRepo) {
+			index = tag.lastIndexOf(":");
+		} else {
+			index = tag.lastIndexOf("-");
 		}
+		
+		tagWithoutVersion = tag.substring(0, index);
+		version = tag.substring(index+1);
 		
 		// pipeline out
 		
-		IDataUtil.put(pipelineCursor, "tag", tag);
-		IDataUtil.put(pipelineCursor, "tagLatest", tagLatest);
-		
-		IDataUtil.put(pipelineCursor, "version", latest);
-		} catch(Exception e) {
-			e.printStackTrace();
-			throw new ServiceException(e);
+		if (isDedicatedRepo) {
+			IDataUtil.put(pipelineCursor, "tagLatest", tagWithoutVersion + ":latest");
+		} else {
+			IDataUtil.put(pipelineCursor, "tagLatest", tagWithoutVersion + "-latest");
 		}
+		
+		IDataUtil.put(pipelineCursor, "version", version);
+		
 		pipelineCursor.destroy();
 		// --- <<IS-END>> ---
 
