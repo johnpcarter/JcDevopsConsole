@@ -331,15 +331,24 @@ public final class tools
 		
 		IDataCursor pipelineCursor = pipeline.getCursor();
 		String tag = IDataUtil.getString(pipelineCursor, "tag");
-		boolean isDedicatedRepo = IDataUtil.getBoolean(pipelineCursor, "isDedicatedRepo");
+		Object isDedicatedRepo = IDataUtil.get(pipelineCursor, "isDedicatedRepo");
 		
 		// process
 		
 		String version = "1.0";
 		String tagWithoutVersion = "";
 		int index = -1;
+		boolean isDedicated = false;
 		
-		if (isDedicatedRepo) {
+		if (isDedicatedRepo == null) {
+			if (tag.indexOf(":") != -1) {
+				isDedicated = true;
+			}
+		} else if ((Boolean) isDedicatedRepo) {
+			isDedicated = true;
+		}
+		
+		if (isDedicated) {
 			index = tag.lastIndexOf(":");
 		} else {
 			index = tag.lastIndexOf("-");
@@ -350,7 +359,7 @@ public final class tools
 		
 		// pipeline out
 		
-		if (isDedicatedRepo) {
+		if (isDedicated) {
 			IDataUtil.put(pipelineCursor, "tagLatest", tagWithoutVersion + ":latest");
 		} else {
 			IDataUtil.put(pipelineCursor, "tagLatest", tagWithoutVersion + "-latest");
