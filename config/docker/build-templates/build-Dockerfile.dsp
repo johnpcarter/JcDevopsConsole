@@ -42,14 +42,24 @@ VOLUME %value volumes%
 # files to be added to based image (includes configuration and package)
 	%loop buildCommands%
 %ifvar commandType equals('file')%
+		%ifvar /user%
+		ADD --chown=%value /user% %value source% %value target%
+		%else%
+		ADD %value source% %value target%
+		%endifvar%
+	%endif%
+%ifvar commandType equals('add')%
 	%ifvar /user%
 	ADD --chown=%value /user% %value source% %value target%
 	%else%
 	ADD %value source% %value target%
 	%endifvar%
-	%ifvar chmod -notempty%
-		RUN chmod u+x %value chmod%
-	%endif%
+%endif%
+%ifvar commandType equals('copy')%
+	COPY %value source% %value target%
+%endif%
+%ifvar chmod -notempty%
+	RUN chmod u+x %value chmod%
 %endif%
 	%endloop%
 %endifvar%
