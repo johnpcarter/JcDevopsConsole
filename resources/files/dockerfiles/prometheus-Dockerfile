@@ -1,3 +1,0 @@
-FROM bitnami/prometheus:latest
-
-ADD helloworld-prometheus.yml /etc/prometheus/prometheus.yml

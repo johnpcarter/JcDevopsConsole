@@ -6,5 +6,6 @@ resources/files/licenses
 resources/files/other
 resources/files/install
 resources/files/installer-images
+resources/files/dockerfiles
 resources/source
 *.xml.bak

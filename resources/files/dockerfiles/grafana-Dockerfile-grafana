@@ -1,7 +1,0 @@
-FROM grafana/grafana:latest
-
-COPY ./grafana/config.ini /etc/grafana/config.ini
-COPY ./grafana/provisioning/dashboards.yml /etc/grafana/provisioning/dashboards
-COPY ./grafana/provisioning/datasources.yml /etc/grafana/provisioning/datasources
-RUN mkdir /var/lib/grafana/dashboards
-COPY ./grafana/dashboards/wm-msr.json /var/lib/grafana/dashboards
