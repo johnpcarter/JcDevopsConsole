@@ -33,30 +33,48 @@ public final class _priv
 	{
 		// --- <<IS-START(formatNameForKS8Compatibility)>> ---
 		// @sigtype java 3.5
+		// [i] field:0:optional prefix
 		// [i] field:0:required value
 		// [i] field:0:optional maxLen
 		// [i] field:0:optional replaceDots {"false","true"}
+		// [i] object:0:optional addUniqueIndex
 		// [o] field:0:required value
 		// pipeline in
 		IDataCursor pipelineCursor = pipeline.getCursor();
+		String prefix = IDataUtil.getString(pipelineCursor, "prefix");
 		String value = IDataUtil.getString(pipelineCursor, "value");
 		String maxLen = IDataUtil.getString(pipelineCursor, "maxLen");
 		String replaceDots = IDataUtil.getString(pipelineCursor, "replaceDots");
+		boolean addUniqueIndex = IDataUtil.getBoolean(pipelineCursor, "addUniqueIndex");
 		
 		int max = 0;
 		
 		try { max = Integer.parseInt(maxLen); } catch(Exception e) {} // do now't
 		
+		if (value == null || value.length() == 0 || addUniqueIndex) {
+			if (value == null)
+				value = "" + index++;
+			else
+				value += index++;
+			
+			if (index > 99) 
+				index = 0;
+		}
+		
 		if (value != null) {
+		
+			if (prefix != null || prefix.length() > 0)
+				value = prefix + value;
+		
 			value = value.toLowerCase().replace(" ", "-");
 			value = value.replace("_", "-");
 			
 			if (max > 0 && value.length() > max)
 				value = value.substring(0, max);
-		}
-		
-		if (replaceDots != null && replaceDots.equalsIgnoreCase("true")) {
-			value = value.replace(".", "-");
+			
+			if (replaceDots != null && replaceDots.equalsIgnoreCase("true")) {
+				value = value.replace(".", "-");
+			}
 		}
 		
 		// pipeline out
@@ -130,6 +148,7 @@ public final class _priv
 		// [i] field:0:required environment
 		// [i] recref:0:required run jc.devops.console.configuration_.docTypes:Run
 		// [i] field:0:required dirForPropertiesFiles
+		// [i] field:0:required defaultNamespace
 		// [o] recref:0:required run jc.devops.console.configuration_.docTypes:Run
 		// [o] object:0:required requiresBuild
 		// pipeline in
@@ -139,6 +158,7 @@ public final class _priv
 		String appPrefix = IDataUtil.getString(c, "appPrefix");
 		String environment = IDataUtil.getString(c, "environment");
 		String dirForPropertiesFiles = IDataUtil.getString(c, "dirForPropertiesFiles");
+		String defaultNamespace = IDataUtil.getString(c, "defaultNamespace");
 		
 		IData run = IDataUtil.getIData(c, "run");
 		
@@ -158,7 +178,7 @@ public final class _priv
 			
 			int i = 0;
 			for (Deployment d : deployments) {
-				requiresBuild = d.updateContainerReferences(appPrefix, buildDir, deployments, builds, environment);
+				requiresBuild = d.updateContainerReferences(appPrefix, buildDir, deployments, builds, environment, d.namespace, defaultNamespace);
 				
 				updatedDeploymentsIData[i++] = d.toIData();
 			}
@@ -181,6 +201,8 @@ public final class _priv
 	}
 
 	// --- <<IS-START-SHARED>> ---
+	
+	private static int index = 0;
 	
 	public static Build[] builds(IData[] builds) {
 		

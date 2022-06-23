@@ -29721,7 +29721,7 @@ You can then access your services via nginx port 80 or 443
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">namespace</value>
+        <value name="field_name">defaultNamespace</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>

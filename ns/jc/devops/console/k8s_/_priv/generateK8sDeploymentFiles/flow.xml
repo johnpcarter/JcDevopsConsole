@@ -1280,7 +1280,7 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">namespace</value>
+        <value name="field_name">defaultNamespace</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1465,7 +1465,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/run;4;0;jc.devops.console.configuration_.docTypes:Run/namespace;1;0" TO="/namespace;1;0">
+<MAPCOPY FROM="/run;4;0;jc.devops.console.configuration_.docTypes:Run/namespace;1;0" TO="/defaultNamespace;1;0">
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="true" FIELD="/dirForPropertiesFiles;1;0">
@@ -6110,7 +6110,7 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">namespace</value>
+        <value name="field_name">defaultNamespace</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -6577,7 +6577,7 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">namespace</value>
+        <value name="field_name">defaultNamespace</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -6887,7 +6887,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/namespace(0);1;0" TO="/volumeInfo;2;0/namespace;1;0">
+<MAPCOPY FROM="/defaultNamespace(0);1;0" TO="/volumeInfo;2;0/namespace;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -12123,7 +12123,7 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">namespace</value>
+        <value name="field_name">defaultNamespace</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -12738,7 +12738,7 @@
 <MAPDELETE FIELD="/requiresBuild;3.1;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/namespace(0);1;0">
+<MAPDELETE FIELD="/defaultNamespace(0);1;0">
 </MAPDELETE>
 
 <MAPDELETE FIELD="/environmentWrapper;2;0">
