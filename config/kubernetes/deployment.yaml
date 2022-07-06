@@ -6,6 +6,7 @@ metadata:
     app: %value appPrefix%%value appName%%nl%
     deploymentId: %value deploymentId%%nl%
     serviceId: %value serviceId%%nl%
+    serviceType: deployments
   namespace: %value namespace%%nl%
   annotations:
     monitoring: "%value requiresMonitoring%"%nl%
@@ -26,7 +27,7 @@ spec:
         image: %value image%%nl%
         ports: %loop ports%
         - containerPort: %value internal%%nl%
-          name: %value description%%endloop%%ifvar resources -notnull%%nl%
+          name: p%value description%%endloop%%ifvar resources -notnull%%nl%
         resources:
           requests:
             cpu: %value cpu% #"0.5"

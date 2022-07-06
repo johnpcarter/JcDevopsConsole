@@ -6295,6 +6295,8 @@
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
         </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
@@ -6333,6 +6335,8 @@
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
         </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>

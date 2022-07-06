@@ -1,0 +1,16 @@
+{
+  "spec": {
+	"template": {
+	  "spec": {
+		"containers": [
+			%loop containers%
+		  {
+			"image": "%value image%",
+			"name": "%value name%"
+		  }
+		  	%endloop%
+		]
+	  }
+	}
+  }
+}

@@ -1,0 +1,26 @@
+user.Administrator.password=
+
+settings.watt.server.port=Administration portal http port
+settings.watt.net.localhost=Override pod container name with whatever you specify here, useful in a containerized environment where you want to specify a service endpoint rather than a pod for resubmission
+settings.watt.server.publish.useCSQ=set to false to disable local caching for outbound messages, which is not recommended when running as a pod due to risk of data loss
+settings.watt.server.saveConfigFiles=set to false to avoid creating backup files for config changes
+settings.watt.server.audit.logFilesToKeep=set to '1' to avoid archiving audit log files
+settings.watt.server.serverlogFilesToKeep=set to '1' to avoid archiving server log files
+settings.watt.server.stats.logFilesToKeep=set to '1' to avoid archiving stats files.
+settings.watt.debug.level=value for 1 to 9 to set debug level of server log
+settings.watt.server.pipeline.processor=Set to false to avoid saving/restore pipeline settings in service
+settings.watt.server.threadPool=set the maximum number of permitted service threads in the global pool
+settings.watt.server.threadPoolMin=set the minimum number of permitted service threads
+settings.watt.net.default.accept=Set the default response type if Accept header missing in outbound http calls
+
+jdbcfunc.ISCoreAudit.connPoolAlias=jdbc alias to use for service audit settings
+jdbcfunc.ISInternal.connPoolAlias=jdbc alias to use for core internal settings
+jdbcfunc.CentralUsers.connPoolAlias=jdbc alias to use for central users settings
+jdbcfunc.Adapters.connPoolAlias=jdbc alias to use for adapter transactions/cache/storage
+jdbcfunc.Xref.connPoolAlias=jdbc alias to use for ref lookup
+
+auditing.ServiceQueue.destination=set to ServiceDBDest if assigning jdbcfunc.ISCoreAudit.connPoolAlias to a db alias
+
+wmcloudsettings.default.iLiveURL=default url for connecting to webMethods cloud tenant
+wmcloudsettings.default.username=default username for connecting to webMethods cloud tenant
+wmcloudsettings.default.password=default password for connecting to webMethods cloud tenant

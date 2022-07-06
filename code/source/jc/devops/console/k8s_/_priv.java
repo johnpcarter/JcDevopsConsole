@@ -63,7 +63,7 @@ public final class _priv
 		
 		if (value != null) {
 		
-			if (prefix != null || prefix.length() > 0)
+			if (prefix != null && prefix.length() > 0)
 				value = prefix + value;
 		
 			value = value.toLowerCase().replace(" ", "-");
@@ -147,7 +147,7 @@ public final class _priv
 		// [i] field:0:required appPrefix
 		// [i] field:0:required environment
 		// [i] recref:0:required run jc.devops.console.configuration_.docTypes:Run
-		// [i] field:0:required dirForPropertiesFiles
+		// [i] field:0:required dirForResourceFiles
 		// [i] field:0:required defaultNamespace
 		// [o] recref:0:required run jc.devops.console.configuration_.docTypes:Run
 		// [o] object:0:required requiresBuild
@@ -157,7 +157,7 @@ public final class _priv
 		String buildDir = IDataUtil.getString(c, "buildDir");
 		String appPrefix = IDataUtil.getString(c, "appPrefix");
 		String environment = IDataUtil.getString(c, "environment");
-		String dirForPropertiesFiles = IDataUtil.getString(c, "dirForPropertiesFiles");
+		String dirForResourceFiles = IDataUtil.getString(c, "dirForResourceFiles");
 		String defaultNamespace = IDataUtil.getString(c, "defaultNamespace");
 		
 		IData run = IDataUtil.getIData(c, "run");
@@ -173,12 +173,18 @@ public final class _priv
 		
 		try {
 			IData[] updatedDeploymentsIData = new IData[deploymentsIData.length];
-			Deployment[] deployments = deployments(deploymentsIData, dirForPropertiesFiles);
+			Deployment[] deployments = deployments(deploymentsIData, dirForResourceFiles);
 			Build[] builds =  builds(buildsIData);
+			
+			try {
+				requiresBuild = Deployment.updateContainerReferences(deployments, builds, appPrefix, buildDir, environment, defaultNamespace);
+			} catch(Exception e) {
+				e.printStackTrace();
+				throw new ServiceException(e);
+			}
 			
 			int i = 0;
 			for (Deployment d : deployments) {
-				requiresBuild = d.updateContainerReferences(appPrefix, buildDir, deployments, builds, environment, d.namespace, defaultNamespace);
 				
 				updatedDeploymentsIData[i++] = d.toIData();
 			}
@@ -218,12 +224,12 @@ public final class _priv
 		return out;
 	}
 		
-	public static Deployment[] deployments(IData[] deployments, String dirForPropertiesFiles) {
+	public static Deployment[] deployments(IData[] deployments, String dirForResourceFiles) {
 		
 		Deployment[] out = new Deployment[deployments.length];
 		
 		for (int i = 0; i < deployments.length; i++) {
-			out[i] = new Deployment(deployments[i], dirForPropertiesFiles);
+			out[i] = new Deployment(deployments[i], dirForResourceFiles);
 		}
 		
 		return out;

@@ -6,6 +6,7 @@ metadata:
     app: %value appPrefix%%value appName%%nl%
     deploymentId: %value deploymentId%%nl%
     serviceId: %value serviceId%%nl%
+    serviceType: statefulsets
   namespace: %value namespace%%nl%
   annotations:
     monitoring: "%value requiresMonitoring%"%nl%

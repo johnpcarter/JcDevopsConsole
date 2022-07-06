@@ -545,7 +545,7 @@ public final class dapi
 		// [i] field:0:optional containers
 		// [i] field:0:optional dockerHost
 		// [i] field:0:optional httpsCert
-		// [i] field:0:required dirForPropertyFiles
+		// [i] field:0:required dirForResourceFiles
 		// pipeline in
 		
 		IDataCursor c = pipeline.getCursor();
@@ -560,7 +560,7 @@ public final class dapi
 		String dockerHost = IDataUtil.getString(c, "dockerHost");
 		String httpsCert = IDataUtil.getString(c, "httpsCert");
 		
-		String dirForProperties = IDataUtil.getString(c, "dirForPropertyFiles");
+		String dirForResourceFiles = IDataUtil.getString(c, "dirForResourceFiles");
 		
 		// process 
 				
@@ -571,7 +571,7 @@ public final class dapi
 			httpsCert = null;
 		
 		try {
-			DockerComposeImpl dk = new DockerComposeImpl(dockerHost, httpsCert, compose, stageName, dirForProperties);
+			DockerComposeImpl dk = new DockerComposeImpl(dockerHost, httpsCert, compose, stageName, dirForResourceFiles);
 			dk.run(buildno, containers, environment);
 			_comps.put(dk.name, dk);
 		

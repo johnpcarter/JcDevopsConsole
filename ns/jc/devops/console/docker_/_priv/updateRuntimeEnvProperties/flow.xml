@@ -2399,10 +2399,10 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/run;4;0;jc.devops.console.configuration_.docTypes:Run/deployments;4;0;jc.devops.console.configuration_.docTypes:RunDeployment/name;1;0" TO="/apiContainerName;1;0">
+<MAPCOPY FROM="/environmentWrapper;2;0/ports;2;1/internal;1;0" TO="/apiContainerPort;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/environmentWrapper;2;0/ports;2;1/internal;1;0" TO="/apiContainerPort;1;0">
+<MAPCOPY FROM="/run;4;0;jc.devops.console.configuration_.docTypes:Run/deployments;4;0;jc.devops.console.configuration_.docTypes:RunDeployment/containers;4;0;jc.devops.console.configuration_.docTypes:Container/name;1;0" TO="/apiContainerName;1;0">
 </MAPCOPY>
 </MAP>
 
