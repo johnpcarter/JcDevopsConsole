@@ -117,7 +117,7 @@ public final class _priv
 		
 			ext = ".properties";
 		
-		} else if (!type.equals("other") && label != null && filename.indexOf(".") == -1){ 
+		} else if (!type.equals("dockerfiles") && !type.equals("other") && label != null && filename.indexOf(".") == -1){ 
 		
 			if (label != null && !label.endsWith(".xml"))
 				filename += ".xml";

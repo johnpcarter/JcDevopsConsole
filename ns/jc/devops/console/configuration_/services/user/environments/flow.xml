@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
 
   <!-- nodes -->
 
@@ -155,9 +156,6 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/userID;1;0" TO="/filter;1;0">
-</MAPCOPY>
-
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="true" FIELD="/path;1;0">
   <DATA ENCODING="XMLValues" I18N="true">
 
@@ -185,6 +183,9 @@
 </Values>
 </DATA>
 </MAPSET>
+
+<MAPCOPY FROM="/userID;1;0" TO="/filter;1;0">
+</MAPCOPY>
 </MAP>
 
 <MAP MODE="OUTPUT">
