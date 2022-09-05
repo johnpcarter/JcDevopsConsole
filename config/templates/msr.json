@@ -17,7 +17,7 @@
     "env": [
       {
         "source": "api_gateway_url",
-        "target": "http://api-gateway:5555",
+        "target": "http://wm-api-gateway:5555",
         "description": "Master API Gateway"
       },
       {
