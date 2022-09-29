@@ -59,7 +59,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -166,7 +166,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/container;4;0;jc.devops.console.configuration_.docTypes:Container/environments;2;0" TO="/environmentWrapper;2;0">
+<MAPCOPY FROM="/container;4;0;jc.devops.console.configuration_.docTypes:Container/environments;2;0" TO="/envWrapper;2;0">
 </MAPCOPY>
 </MAP>
 </SEQUENCE>
@@ -212,7 +212,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -278,7 +278,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -449,7 +449,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -540,10 +540,10 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/environmentWrapper;2;0/ports;2;1" TO="/list1;2;1">
+<MAPCOPY FROM="/defaults;2;0/ports;2;1" TO="/list2;2;1">
 </MAPCOPY>
 
-<MAPCOPY FROM="/defaults;2;0/ports;2;1" TO="/list2;2;1">
+<MAPCOPY FROM="/envWrapper;2;0/ports;2;1" TO="/list1;2;1">
 </MAPCOPY>
 </MAP>
 
@@ -626,7 +626,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -736,9 +736,6 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/mergedList;2;1" TO="/environmentWrapper;2;0/ports;2;1">
-</MAPCOPY>
-
 <MAPDELETE FIELD="/mergedList;2;1">
 </MAPDELETE>
 
@@ -747,6 +744,9 @@
 
 <MAPDELETE FIELD="/list2;2;1">
 </MAPDELETE>
+
+<MAPCOPY FROM="/mergedList;2;1" TO="/envWrapper;2;0/ports;2;1">
+</MAPCOPY>
 </MAP>
 </INVOKE>
 
@@ -887,7 +887,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -979,9 +979,6 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/environmentWrapper;2;0/volumes;2;1" TO="/list1;2;1">
-</MAPCOPY>
-
 <MAPCOPY FROM="/defaults;2;0/volumes;2;1" TO="/list2;2;1">
 </MAPCOPY>
 
@@ -1013,6 +1010,9 @@
 </Values>
 </DATA>
 </MAPSET>
+
+<MAPCOPY FROM="/envWrapper;2;0/volumes;2;1" TO="/list1;2;1">
+</MAPCOPY>
 </MAP>
 
 <MAP MODE="OUTPUT">
@@ -1094,7 +1094,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1228,7 +1228,7 @@
 <MAPDELETE FIELD="/list2;2;1">
 </MAPDELETE>
 
-<MAPCOPY FROM="/mergedList;2;1" TO="/environmentWrapper;2;0/volumes;2;1">
+<MAPCOPY FROM="/mergedList;2;1" TO="/envWrapper;2;0/volumes;2;1">
 </MAPCOPY>
 </MAP>
 </INVOKE>
@@ -1370,7 +1370,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1521,10 +1521,10 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/environmentWrapper;2;0/env;2;1" TO="/list1;2;1">
+<MAPCOPY FROM="/defaults;2;0/env;2;1" TO="/list2;2;1">
 </MAPCOPY>
 
-<MAPCOPY FROM="/defaults;2;0/env;2;1" TO="/list2;2;1">
+<MAPCOPY FROM="/envWrapper;2;0/env;2;1" TO="/list1;2;1">
 </MAPCOPY>
 </MAP>
 
@@ -1607,7 +1607,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1756,7 +1756,7 @@
 <MAPDELETE FIELD="/list2;2;1">
 </MAPDELETE>
 
-<MAPCOPY FROM="/mergedList;2;1" TO="/environmentWrapper;2;0/env;2;1">
+<MAPCOPY FROM="/mergedList;2;1" TO="/envWrapper;2;0/env;2;1">
 </MAPCOPY>
 </MAP>
 </INVOKE>
@@ -1811,7 +1811,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1955,7 +1955,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -2054,10 +2054,10 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/defaults;2;0/adminUser;1;0" TO="/environmentWrapper;2;0/adminUser;1;0" CONDITION="%environmentWrapper/adminUser% != $null">
+<MAPCOPY FROM="/defaults;2;0/adminPassword;1;0" TO="/envWrapper;2;0/adminPassword;1;0" CONDITION="%envWrapper/adminPassword% != $null">
 </MAPCOPY>
 
-<MAPCOPY FROM="/defaults;2;0/adminPassword;1;0" TO="/environmentWrapper;2;0/adminPassword;1;0" CONDITION="%environmentWrapper/adminPassword% != $null">
+<MAPCOPY FROM="/defaults;2;0/adminUser;1;0" TO="/envWrapper;2;0/adminUser;1;0" CONDITION="%envWrapper/adminUser% != $null">
 </MAPCOPY>
 </MAP>
 
@@ -2076,6 +2076,149 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">environmentWrapper</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_usereditable">true</value>
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">name</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <array name="field_options" type="value" depth="1">
+            </array>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_usereditable">true</value>
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">adminUser</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <array name="field_options" type="value" depth="1">
+            </array>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_usereditable">true</value>
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">adminPassword</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <array name="field_options" type="value" depth="1">
+            </array>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">ports</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="field_opt">true</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="is_soap_array_encoding_used">false</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">volumes</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="field_opt">true</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="is_soap_array_encoding_used">false</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">env</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="field_opt">true</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="is_soap_array_encoding_used">false</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+          </record>
+        </array>
+        <value name="modifiable">true</value>
+      </record>
     </array>
     <value name="modifiable">true</value>
   </record>
@@ -2129,13 +2272,80 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">environmentWrapper</value>
+        <value name="field_name">envWrapper</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">ports</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="is_soap_array_encoding_used">false</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+            <value name="modifiable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">volumes</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="is_soap_array_encoding_used">false</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+            <value name="modifiable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">env</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="is_soap_array_encoding_used">false</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+            <value name="modifiable">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="node_subtype">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">adminUser</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="node_subtype">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">adminPassword</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+          </record>
         </array>
         <value name="modifiable">true</value>
       </record>
@@ -2235,6 +2445,12 @@
 </MAPDELETE>
 
 <MAPDELETE FIELD="/defaults;2;0">
+</MAPDELETE>
+
+<MAPCOPY FROM="/envWrapper;2;0" TO="/environmentWrapper;2;0">
+</MAPCOPY>
+
+<MAPDELETE FIELD="/envWrapper;2;0">
 </MAPDELETE>
 </MAP>
 </FLOW>

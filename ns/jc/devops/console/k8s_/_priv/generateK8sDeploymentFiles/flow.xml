@@ -12706,9 +12706,6 @@
 
 <MAPCOPY FROM="/run;4;0;jc.devops.console.configuration_.docTypes:Run/deployments;4;0;jc.devops.console.configuration_.docTypes:RunDeployment" TO="/deploymentSet;4;0;jc.devops.console.configuration_.docTypes:RunDeployment">
 </MAPCOPY>
-
-<MAPCOPY FROM="/namespace(0);1;0" TO="/namespace;1;0">
-</MAPCOPY>
 </MAP>
 
 <MAP MODE="OUTPUT">
