@@ -108,6 +108,10 @@
     <value name="resetPeriod">300</value>
     <value name="cancelThreadOnTimeout">false</value>
   </record>
+  <record name="concurrentrequestlimitsettings" javaclass="com.wm.util.Values">
+    <value name="maxConcurrentRequests">20</value>
+    <value name="concurrentRequestLimitEnabled">false</value>
+  </record>
   <array name="allowedHTTPMethods" type="value" depth="1">
     <value>HEAD</value>
     <value>DELETE</value>
@@ -117,7 +121,7 @@
     <value>PUT</value>
     <value>PATCH</value>
   </array>
-  <value name="pipeline_option">2</value>
+  <value name="pipeline_option">3</value>
   <null name="originURI"/>
   <value name="modifiable">true</value>
   <value name="is_public">false</value>
