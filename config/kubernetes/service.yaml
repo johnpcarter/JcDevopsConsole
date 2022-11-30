@@ -13,7 +13,7 @@ spec:
   clusterIP: %value ipaddress%%endif%
   ports: %loop ports%
   - name: %value description%%nl%
-    port: %value internal%%nl%
-    protocol: TCP
-    targetPort: %value internal%%ifvar serviceType equals('NodePort')%
-    nodePort: %value publicPort%%endif%%endloop%
+    port: %value external%%nl%
+    protocol: TCP%nl%
+    targetPort: %value internal%%ifvar serviceType equals('NodePort')%%nl%
+    nodePort: %value publicPort%%nl%%endif%%endloop%
