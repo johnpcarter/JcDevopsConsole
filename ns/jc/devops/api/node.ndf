@@ -13723,7 +13723,7 @@
           <record name="parameters" javaclass="com.wm.util.Values">
             <record name="environment" javaclass="com.wm.util.Values">
               <value name="name">environment</value>
-              <value name="source">QUERY</value>
+              <value name="source">HEADER</value>
               <value name="type">STRING</value>
               <null name="description"/>
               <Boolean name="isRequired">false</Boolean>
