@@ -141,8 +141,9 @@ public final class _priv
 		// [i] field:0:required name
 		// [i] field:0:required sourceDirectory
 		// [i] record:1:required repositories
+		// [i] - field:0:required server
 		// [i] - field:0:required name
-		// [i] - field:0:required path
+		// [i] - field:0:optional path
 		// [o] recref:1:required packages jc.devops.console.packages_.docTypes:PackageInfo
 		// pipeline  in
 		
@@ -299,14 +300,17 @@ public final class _priv
 		
 		for (IData i : in) {
 			IDataCursor c = i.getCursor();
+			String server = IDataUtil.getString(c, "server");
 			String name = IDataUtil.getString(c, "name");
 			String path = IDataUtil.getString(c, "path");
 			c.destroy();
 			
+			String key = new File(server, name).getPath();
+			
 			if (path != null && !path.isEmpty()) {
-				map.put(name, path);
+				map.put(key, path);
 			} else {
-				map.put(name, ".");
+				map.put(key, ".");
 			}
 		}
 		

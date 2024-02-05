@@ -91,11 +91,13 @@ public final class _priv
 		
 		// process
 		
-		if (repo != null) {
+		if (!uri.endsWith(".git") && repo != null) {
 			if (uri.endsWith("/"))
 				uri += repo + ".git";
 			else
 				uri += "/" + repo + ".git";
+		} else {
+			localDirStr = new File(localDirStr, repo).getPath();
 		}
 		
 		File localDir = new File(localDirStr);
